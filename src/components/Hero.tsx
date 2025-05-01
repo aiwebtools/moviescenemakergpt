@@ -22,6 +22,18 @@ const Hero: React.FC = () => {
       
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          {/* YouTube Video */}
+          <div className="mb-8 cyberpunk-card shadow-glow p-1">
+            <iframe 
+              className="w-full aspect-video rounded-md"
+              src="https://www.youtube.com/embed/dUkvd9ZJCJU?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&loop=1&playlist=dUkvd9ZJCJU"
+              title="Movie Scene Maker GPT Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
+          </div>
+          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             <span className="text-gradient bg-gradient-to-r from-cyberpunk-blue to-cyberpunk-pink bg-clip-text text-transparent">
               Transform Yourself Into
