@@ -89,7 +89,7 @@
   
   .neon-button {
     @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden 
-           font-bold rounded-md group bg-cyberpunk-blue text-black transition-all duration-300;
+           font-bold rounded-md bg-cyberpunk-blue text-black transition-all duration-300;
     box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
   }
   
