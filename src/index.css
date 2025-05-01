@@ -85,6 +85,7 @@
   
   .glass-button:hover {
     box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    transform: translateY(-2px);
   }
   
   .neon-button {
@@ -96,6 +97,18 @@
   .neon-button:hover {
     @apply bg-cyberpunk-pink;
     box-shadow: 0 0 20px rgba(217, 70, 239, 0.7);
+    transform: translateY(-3px) scale(1.05);
+  }
+  
+  .neon-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-cyberpunk-blue via-cyberpunk-purple to-cyberpunk-pink opacity-0 transition-opacity duration-300;
+    z-index: -1;
+    border-radius: inherit;
+  }
+  
+  .neon-button:hover::before {
+    @apply opacity-30;
   }
 
   .cyberpunk-heading {
@@ -115,6 +128,38 @@
   .shadow-glow:hover {
     box-shadow: 0 0 25px rgba(0, 240, 255, 0.7);
   }
+
+  .interactive-link {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  
+  .interactive-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-cyberpunk-blue transition-all duration-300;
+  }
+  
+  .interactive-link:hover::after {
+    @apply w-full;
+  }
+  
+  .interactive-link:hover {
+    @apply text-cyberpunk-neon-blue;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  }
+  
+  .pulse-border {
+    @apply border border-transparent relative;
+    animation: pulseBorder 2s infinite;
+  }
+  
+  @keyframes pulseBorder {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
+    }
+  }
 }
 
 @keyframes rotate {
@@ -124,6 +169,11 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 #root {

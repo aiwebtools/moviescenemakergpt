@@ -8,10 +8,12 @@ import FAQ from '@/components/FAQ';
 import DisclaimerSection from '@/components/DisclaimerSection';
 import Footer from '@/components/Footer';
 import ConsentPopup from '@/components/ConsentPopup';
+import InteractiveBackground from '@/components/InteractiveBackground';
 
 const Index: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-cyberpunk-dark">
+      <InteractiveBackground />
       <Header />
       <main>
         <Hero />
