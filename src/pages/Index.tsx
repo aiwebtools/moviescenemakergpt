@@ -22,11 +22,11 @@ const Index: React.FC = () => {
           if (videoContainerRef.current) {
             const iframe = document.createElement('iframe');
             iframe.className = "w-full aspect-video rounded-md";
-            iframe.src = "https://www.youtube.com/embed/XTDHx4Y4ftU?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&loop=1&playlist=XTDHx4Y4ftU&enablejsapi=1";
+            iframe.src = "https://www.youtube.com/embed/-F1NJYjsQ6k?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&loop=1&playlist=-F1NJYjsQ6k&enablejsapi=1";
             iframe.title = "Movie Scene Maker GPT Demo";
             iframe.frameBorder = "0";
             iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            iframe.allowFullScreen = true;
+            iframe.allowFullscreen = true;
             
             // Clear container and add iframe
             videoContainerRef.current.innerHTML = '';
