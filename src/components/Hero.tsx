@@ -49,9 +49,13 @@ const Hero: React.FC = () => {
             </Button>
           </div>
           
-          {/* Movie frames mockup */}
+          {/* Movie frames mockup - Now clickable */}
           <div className="mt-16 relative">
-            <div className="cyberpunk-card p-1 inline-block">
+            <a 
+              href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
+              className="cyberpunk-card p-1 inline-block hover:opacity-90 transition-opacity cursor-pointer"
+              aria-label="Try Movie Scene Maker GPT"
+            >
               <div className="grid grid-cols-3 gap-1">
                 {[1, 2, 3].map((i) => (
                   <div key={i} className="relative aspect-video w-full sm:w-40 md:w-60">
@@ -63,11 +67,14 @@ const Hero: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </a>
             
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-cyberpunk-dark px-6 py-2 rounded-full border border-cyberpunk-blue/30">
+            <a 
+              href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
+              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-cyberpunk-dark px-6 py-2 rounded-full border border-cyberpunk-blue/30 hover:border-cyberpunk-blue/60 transition-all cursor-pointer"
+            >
               <span className="text-cyberpunk-neon-blue text-sm font-medium">Your Story Awaits</span>
-            </div>
+            </a>
           </div>
         </div>
       </div>
