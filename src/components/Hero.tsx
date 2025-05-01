@@ -1,0 +1,78 @@
+
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+
+const Hero: React.FC = () => {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      {/* Cyberpunk grid background */}
+      <div 
+        className="absolute inset-0 z-0 opacity-10"
+        style={{
+          backgroundImage: 'linear-gradient(to right, #1EAEDB 1px, transparent 1px), linear-gradient(to bottom, #1EAEDB 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+          backgroundPosition: 'center',
+        }}
+      />
+      
+      {/* Glowing orbs */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-cyberpunk-purple/20 filter blur-3xl animate-float" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-cyberpunk-blue/20 filter blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      
+      <div className="container mx-auto px-4 py-12 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <span className="text-gradient bg-gradient-to-r from-cyberpunk-blue to-cyberpunk-pink bg-clip-text text-transparent">
+              Transform Yourself Into
+            </span>
+            <br />
+            <span className="cyberpunk-heading text-white">A Movie Star</span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Become the star of your own cinematic adventure with Movie Scene Maker GPT. Create stunning, personalized movie scenes featuring you in any genre, setting, or storyline.
+          </p>
+          
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <Button asChild className="neon-button group">
+              <a href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt" className="flex items-center gap-2">
+                Try Movie Scene Maker GPT
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+              </a>
+            </Button>
+            
+            <Button asChild variant="outline" className="glass-button">
+              <a href="#how-it-works">
+                Learn How It Works
+              </a>
+            </Button>
+          </div>
+          
+          {/* Movie frames mockup */}
+          <div className="mt-16 relative">
+            <div className="cyberpunk-card p-1 inline-block">
+              <div className="grid grid-cols-3 gap-1">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="relative aspect-video w-full sm:w-40 md:w-60">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyberpunk-blue/20 to-cyberpunk-pink/20 animate-pulse-glow" style={{ animationDelay: `${i * 0.2}s` }}>
+                      <div className="w-full h-full flex items-center justify-center text-white/70 text-xs">
+                        Scene {i}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-cyberpunk-dark px-6 py-2 rounded-full border border-cyberpunk-blue/30">
+              <span className="text-cyberpunk-neon-blue text-sm font-medium">Your Story Awaits</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
