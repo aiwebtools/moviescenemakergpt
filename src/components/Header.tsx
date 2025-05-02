@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import Logo from './Logo';
@@ -47,7 +46,7 @@ const Header: React.FC = () => {
     // Disclaimer is now available in the footer or its dedicated section
   ];
 
-  // Animation tools for the dropdown - added RunwayML and PIKA LABS
+  // Animation tools for the dropdown - added Text To Video Prompt Generator GPT
   const animationTools = [
     { name: 'SORA', href: 'https://www.sora.com' },
     { name: 'KLING', href: 'https://klingai.com' },
@@ -55,6 +54,7 @@ const Header: React.FC = () => {
     { name: 'HIGGSFIELD', href: 'https://higgsfield.ai/' },
     { name: 'RunwayML', href: 'https://runwayml.com/' },
     { name: 'PIKA LABS', href: 'https://pika.art/' },
+    { name: 'Text To Video Prompt Generator GPT', href: 'https://texttovideoprompter.lovable.app/?via=aiwebtools' },
   ];
 
   return (
