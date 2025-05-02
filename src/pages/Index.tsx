@@ -18,6 +18,24 @@ const Index: React.FC = () => {
   const [audioPlaying, setAudioPlaying] = useState(false);
   const { toast } = useToast();
 
+  // Auto-start audio when component mounts
+  useEffect(() => {
+    // Small delay to ensure browser is ready
+    const timer = setTimeout(() => {
+      createAudioPlayer();
+      setAudioPlaying(true);
+      
+      // Show toast notification
+      toast({
+        title: "Audio playing",
+        description: "Enjoy the cyberpunk atmosphere!",
+        duration: 2000,
+      });
+    }, 1000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   const toggleAudio = () => {
     if (audioPlayerRef.current) {
       const iframe = audioPlayerRef.current.querySelector('iframe');
