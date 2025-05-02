@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import Logo from './Logo';
@@ -75,6 +76,8 @@ const Header: React.FC = () => {
               <a 
                 key={link.name} 
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white hover:text-cyberpunk-neon-blue transition-colors text-sm"
               >
                 {link.name}
@@ -122,7 +125,12 @@ const Header: React.FC = () => {
               asChild 
               className="neon-button"
             >
-              <a href="https://www.aiwebtools.ai" className="flex items-center gap-2">
+              <a 
+                href="https://www.aiwebtools.ai" 
+                className="flex items-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 More AI Tools
               </a>
             </Button>
@@ -149,6 +157,8 @@ const Header: React.FC = () => {
                 href={link.href}
                 className="text-white hover:text-cyberpunk-neon-blue transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {link.name}
               </a>
@@ -186,6 +196,8 @@ const Header: React.FC = () => {
               <a 
                 href="https://www.aiwebtools.ai"
                 onClick={() => setIsMobileMenuOpen(false)}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 More AI Tools
               </a>

@@ -36,7 +36,12 @@ const Hero: React.FC = () => {
           
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Button asChild className="neon-button group">
-              <a href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt" className="flex items-center gap-2">
+              <a 
+                href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt" 
+                className="flex items-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Try Movie Scene Maker GPT
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
               </a>
@@ -55,6 +60,8 @@ const Hero: React.FC = () => {
               href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
               className="cyberpunk-card p-1 inline-block hover:opacity-90 transition-opacity cursor-pointer"
               aria-label="Try Movie Scene Maker GPT"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="grid grid-cols-3 gap-1">
                 {[1, 2, 3].map((i) => (
@@ -72,6 +79,8 @@ const Hero: React.FC = () => {
             <a 
               href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
               className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-cyberpunk-dark px-6 py-2 rounded-full border border-cyberpunk-blue/30 hover:border-cyberpunk-blue/60 transition-all cursor-pointer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <span className="text-cyberpunk-neon-blue text-sm font-medium">Your Story Awaits</span>
             </a>
