@@ -55,24 +55,24 @@ const Index: React.FC = () => {
       <main>
         <Hero />
         <HowItWorks />
+        
+        {/* YouTube Video - Moved above Testimonials */}
+        <div className="w-full max-w-4xl mx-auto px-4 py-8">
+          <div className="cyberpunk-card shadow-glow p-1">
+            <div 
+              ref={videoContainerRef}
+              className="w-full aspect-video rounded-md bg-black flex items-center justify-center"
+            >
+              <div className="text-gray-400">Loading video...</div>
+            </div>
+          </div>
+        </div>
+        
         <Testimonials />
         <FAQ />
         <DisclaimerSection />
       </main>
       <Footer />
-      
-      {/* YouTube Video - Moved to bottom of page */}
-      <div className="w-full max-w-4xl mx-auto px-4 py-8">
-        <div className="cyberpunk-card shadow-glow p-1">
-          <div 
-            ref={videoContainerRef}
-            className="w-full aspect-video rounded-md bg-black flex items-center justify-center"
-          >
-            <div className="text-gray-400">Loading video...</div>
-          </div>
-        </div>
-      </div>
-      
       <ConsentPopup />
     </div>
   );
