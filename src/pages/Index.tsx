@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
@@ -10,31 +10,13 @@ import Footer from '@/components/Footer';
 import ConsentPopup from '@/components/ConsentPopup';
 import InteractiveBackground from '@/components/InteractiveBackground';
 import { Button } from '@/components/ui/button';
-import { Volume2, VolumeX } from 'lucide-react';
+import { Play, VolumeX } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 
 const Index: React.FC = () => {
   const audioPlayerRef = useRef<HTMLDivElement>(null);
   const [audioPlaying, setAudioPlaying] = useState(false);
   const { toast } = useToast();
-
-  // Auto-start audio when component mounts
-  useEffect(() => {
-    // Small delay to ensure browser is ready
-    const timer = setTimeout(() => {
-      createAudioPlayer();
-      setAudioPlaying(true);
-      
-      // Show toast notification with new text and longer duration
-      toast({
-        title: "You're the Star Now",
-        description: "Anything you Dream! Welcome to AI Movie Creation Studio - AiWebTools.Ai",
-        duration: 15000, // 15 seconds
-      });
-    }, 1000);
-    
-    return () => clearTimeout(timer);
-  }, []);
 
   const toggleAudio = () => {
     if (audioPlayerRef.current) {
@@ -121,7 +103,7 @@ const Index: React.FC = () => {
           className="rounded-full h-12 w-12 flex items-center justify-center bg-cyberpunk-neon-blue hover:bg-cyberpunk-neon-purple transition-colors shadow-glow"
           aria-label={audioPlaying ? "Mute background audio" : "Play background audio"}
         >
-          {audioPlaying ? <Volume2 size={20} /> : <VolumeX size={20} />}
+          {audioPlaying ? <VolumeX size={20} /> : <Play size={20} />}
         </Button>
       </div>
       
