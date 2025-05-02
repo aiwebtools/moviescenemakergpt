@@ -32,14 +32,15 @@ const Index: React.FC = () => {
           iframe.contentWindow?.postMessage(message, '*');
           setAudioPlaying(!audioPlaying);
           
-          // Show toast notification with specified duration
-          toast({
-            title: audioPlaying ? "Audio paused" : "You're the Star Now",
-            description: audioPlaying 
-              ? "Background audio has been paused" 
-              : "Anything you Dream! Welcome to AI Movie Creation Studio - AiWebTools.Ai",
-            duration: 15000, // 15 seconds
-          });
+          // Show toast notification only when audio is starting to play
+          if (!audioPlaying) {
+            toast({
+              title: "You're the Star Now",
+              description: "Anything you Dream! Welcome to AI Movie Creation Studio - AiWebTools.Ai",
+              duration: 15000, // 15 seconds
+            });
+          }
+          // No toast when pausing
         } catch (e) {
           console.log('Could not control audio:', e);
         }
@@ -48,7 +49,7 @@ const Index: React.FC = () => {
         createAudioPlayer();
         setAudioPlaying(true);
         
-        // Show toast notification with specified duration
+        // Show toast notification when creating and starting audio
         toast({
           title: "You're the Star Now",
           description: "Anything you Dream! Welcome to AI Movie Creation Studio - AiWebTools.Ai",
