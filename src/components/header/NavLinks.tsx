@@ -14,6 +14,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ links }) => {
           key={link.name} 
           name={link.name} 
           href={link.href}
+          className="text-white hover:text-cyberpunk-neon-blue transition-colors text-sm relative group font-medium py-1 px-2"
         />
       ))}
     </>

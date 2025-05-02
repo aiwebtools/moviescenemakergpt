@@ -42,7 +42,7 @@ const Header: React.FC = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black/60 backdrop-blur-lg shadow-lg' 
+          ? 'bg-black/70 backdrop-blur-lg shadow-md shadow-cyberpunk-blue/20' 
           : 'bg-transparent'
       }`}
     >
@@ -59,11 +59,12 @@ const Header: React.FC = () => {
 
             <Button 
               asChild 
-              className="neon-button"
+              className="neon-button font-bold tracking-wide"
+              size="lg"
             >
               <a 
                 href="https://www.aiwebtools.ai" 
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 transition-all duration-300 hover:scale-105"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -74,11 +75,11 @@ const Header: React.FC = () => {
 
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-white hover:text-cyberpunk-neon-blue"
+            className="md:hidden text-white hover:text-cyberpunk-neon-blue transition-all duration-300 hover:scale-110 focus:outline-none"
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} className="animate-fade-in" /> : <Menu size={24} className="animate-fade-in" />}
           </button>
         </div>
       </div>
