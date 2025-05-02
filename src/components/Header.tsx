@@ -47,12 +47,14 @@ const Header: React.FC = () => {
     // Disclaimer is now available in the footer or its dedicated section
   ];
 
-  // Animation tools for the dropdown
+  // Animation tools for the dropdown - added RunwayML and PIKA LABS
   const animationTools = [
     { name: 'SORA', href: 'https://www.sora.com' },
     { name: 'KLING', href: 'https://klingai.com' },
     { name: 'HAILUO', href: 'https://hailuoai.video/' },
     { name: 'HIGGSFIELD', href: 'https://higgsfield.ai/' },
+    { name: 'RunwayML', href: 'https://runwayml.com/' },
+    { name: 'PIKA LABS', href: 'https://pika.art/' },
   ];
 
   return (
