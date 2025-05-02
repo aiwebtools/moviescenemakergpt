@@ -25,10 +25,10 @@ const Index: React.FC = () => {
       createAudioPlayer();
       setAudioPlaying(true);
       
-      // Show toast notification
+      // Show toast notification with new text
       toast({
-        title: "Audio playing",
-        description: "Enjoy the cyberpunk atmosphere!",
+        title: "You're the Star Now",
+        description: "Anything you Dream! Welcome to AI Movie Creation Studio - AiWebTools.Ai",
         duration: 2000,
       });
     }, 1000);
@@ -50,9 +50,12 @@ const Index: React.FC = () => {
           iframe.contentWindow?.postMessage(message, '*');
           setAudioPlaying(!audioPlaying);
           
+          // Updated toast notification text
           toast({
-            title: audioPlaying ? "Audio paused" : "Audio playing",
-            description: audioPlaying ? "Background audio has been paused" : "Enjoy the cyberpunk atmosphere!",
+            title: audioPlaying ? "Audio paused" : "You're the Star Now",
+            description: audioPlaying 
+              ? "Background audio has been paused" 
+              : "Anything you Dream! Welcome to AI Movie Creation Studio - AiWebTools.Ai",
             duration: 2000,
           });
         } catch (e) {
@@ -63,9 +66,10 @@ const Index: React.FC = () => {
         createAudioPlayer();
         setAudioPlaying(true);
         
+        // Updated toast notification text
         toast({
-          title: "Audio playing",
-          description: "Enjoy the cyberpunk atmosphere!",
+          title: "You're the Star Now",
+          description: "Anything you Dream! Welcome to AI Movie Creation Studio - AiWebTools.Ai",
           duration: 2000,
         });
       }
