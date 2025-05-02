@@ -30,7 +30,7 @@ const Header: React.FC = () => {
   const navLinks = [
     { name: 'Movie Scene Maker GPT', href: 'https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt' },
     { name: 'Movie Script Writer GPT', href: 'https://moviescriptwritergpt.lovable.app/?via=aiwebtools' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Movie Trailer Poster Maker', href: 'https://chatgpt.com/g/g-6814ab172de081918023593ce10d791d-movie-trailer-poster-gpt' },
     { name: 'Disclaimer', href: '#disclaimer' },
   ];
 

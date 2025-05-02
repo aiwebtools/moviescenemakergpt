@@ -43,10 +43,10 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#faq" 
+                <a href="https://chatgpt.com/g/g-6814ab172de081918023593ce10d791d-movie-trailer-poster-gpt" 
                    className="interactive-link text-gray-400 flex items-center gap-2">
-                  <Info size={16} className="text-cyberpunk-blue" />
-                  FAQ
+                  <Film size={16} className="text-cyberpunk-blue" />
+                  Movie Trailer Poster Maker
                 </a>
               </li>
               <li>
