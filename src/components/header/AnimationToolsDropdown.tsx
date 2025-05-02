@@ -35,6 +35,11 @@ const AnimationToolsDropdown: React.FC<AnimationToolsDropdownProps> = ({ variant
     { name: 'Text To Video Prompt Generator GPT', href: 'https://texttovideoprompter.lovable.app/?via=aiwebtools' },
   ];
 
+  const musicTools: AnimationTool[] = [
+    { name: 'SUNO Music Generator', href: 'https://suno.com/invite/@aiwebtools' },
+    { name: 'Eleven Labs Voice & Sound Generator', href: 'https://elevenlabs.io/?from=kennybastian5304' },
+  ];
+
   if (variant === 'mobile') {
     return (
       <Accordion type="single" collapsible className="w-full">
@@ -45,6 +50,27 @@ const AnimationToolsDropdown: React.FC<AnimationToolsDropdownProps> = ({ variant
           <AccordionContent>
             <div className="flex flex-col space-y-2 pl-4">
               {animationTools.map((tool) => (
+                <a 
+                  key={tool.name}
+                  href={tool.href}
+                  className="text-white hover:text-cyberpunk-neon-blue py-2 transition-all duration-300 hover:translate-x-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {tool.name}
+                </a>
+              ))}
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+        
+        <AccordionItem value="music-fx-tools-mobile" className="border-none">
+          <AccordionTrigger className="text-white hover:text-cyberpunk-neon-blue py-2 font-medium">
+            Music & FX Generation
+          </AccordionTrigger>
+          <AccordionContent>
+            <div className="flex flex-col space-y-2 pl-4">
+              {musicTools.map((tool) => (
                 <a 
                   key={tool.name}
                   href={tool.href}
@@ -81,6 +107,28 @@ const AnimationToolsDropdown: React.FC<AnimationToolsDropdownProps> = ({ variant
             <AccordionContent>
               <div className="flex flex-col space-y-1">
                 {animationTools.map((tool) => (
+                  <DropdownMenuItem key={tool.name} asChild>
+                    <a 
+                      href={tool.href} 
+                      className="cursor-pointer py-2 px-4 hover:bg-cyberpunk-dark hover:text-cyberpunk-neon-blue transition-all duration-300 hover:translate-x-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {tool.name}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+          
+          <AccordionItem value="music-fx-tools" className="border-none">
+            <AccordionTrigger className="py-2 px-2 hover:text-cyberpunk-neon-blue font-medium">
+              Music & FX Generation
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="flex flex-col space-y-1">
+                {musicTools.map((tool) => (
                   <DropdownMenuItem key={tool.name} asChild>
                     <a 
                       href={tool.href} 
