@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -11,68 +10,58 @@ import ConsentPopup from '@/components/ConsentPopup';
 import InteractiveBackground from '@/components/InteractiveBackground';
 
 const Index: React.FC = () => {
-  const videoContainerRef = useRef<HTMLDivElement>(null);
+  const audioPlayerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Use Intersection Observer to load the video when it's visible
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Create the YouTube iframe dynamically when in view
-          if (videoContainerRef.current) {
-            const iframe = document.createElement('iframe');
-            iframe.className = "w-full aspect-video rounded-md";
-            // Optimize video loading with better performance settings
-            // Use lower resolution at start (hq=0), unmuted, with autoplay and playsinline
-            iframe.src = "https://www.youtube.com/embed/-F1NJYjsQ6k?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&loop=1&playlist=-F1NJYjsQ6k&enablejsapi=1&modestbranding=1&playsinline=1&origin=" + window.location.origin + "&hq=0&cc_load_policy=0";
-            iframe.title = "Movie Scene Maker GPT Demo";
-            iframe.frameBorder = "0";
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            iframe.allowFullscreen = true;
-            
-            // Clear container and add iframe
-            videoContainerRef.current.innerHTML = '';
-            videoContainerRef.current.appendChild(iframe);
-            
-            // Stop observing after video is inserted
-            observer.disconnect();
+    // Create the YouTube iframe immediately but make it hidden
+    // This will allow audio to play right when the user visits the site
+    if (audioPlayerRef.current) {
+      const iframe = document.createElement('iframe');
+      // Make iframe visually hidden but still functional
+      iframe.style.width = '1px';
+      iframe.style.height = '1px';
+      iframe.style.position = 'absolute';
+      iframe.style.top = '-9999px';
+      iframe.style.left = '-9999px';
+      
+      // Set YouTube parameters to maximize audio experience:
+      // - autoplay=1: Start playing automatically
+      // - mute=0: Ensure audio is unmuted
+      // - volume=100: Set volume to maximum (though this is controlled by user device)
+      // - loop=1 & playlist: Keep playing the audio in a loop
+      iframe.src = "https://www.youtube.com/embed/-F1NJYjsQ6k?autoplay=1&mute=0&controls=0&rel=0&showinfo=0&loop=1&playlist=-F1NJYjsQ6k&enablejsapi=1&modestbranding=1&playsinline=1&origin=" + window.location.origin;
+      iframe.title = "Background Audio";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      
+      // Clear container and add iframe
+      audioPlayerRef.current.innerHTML = '';
+      audioPlayerRef.current.appendChild(iframe);
+      
+      // Attempt to maximize volume via JavaScript
+      // Note: Browser security may prevent this from working as expected
+      setTimeout(() => {
+        try {
+          if (iframe.contentWindow) {
+            iframe.contentWindow.postMessage('{"event":"command","func":"setVolume","args":[100]}', '*');
           }
+        } catch (e) {
+          console.log('Could not adjust volume via API:', e);
         }
-      });
-    }, { 
-      threshold: 0.01, // Trigger when even a tiny part of the video becomes visible
-      rootMargin: '300px 0px' // Preload video when within 300px of viewport
-    });
-    
-    if (videoContainerRef.current) {
-      observer.observe(videoContainerRef.current);
+      }, 2000);
     }
-    
-    return () => {
-      observer.disconnect();
-    };
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-cyberpunk-dark">
       <InteractiveBackground />
       <Header />
+      
+      {/* Hidden audio player div */}
+      <div ref={audioPlayerRef} className="hidden"></div>
+      
       <main>
         <Hero />
         <HowItWorks />
-        
-        {/* YouTube Video - Moved above Testimonials */}
-        <div className="w-full max-w-4xl mx-auto px-4 py-8">
-          <div className="cyberpunk-card shadow-glow p-1">
-            <div 
-              ref={videoContainerRef}
-              className="w-full aspect-video rounded-md bg-black flex items-center justify-center"
-            >
-              <div className="text-gray-400">Loading video...</div>
-            </div>
-          </div>
-        </div>
-        
         <Testimonials />
         <FAQ />
         <DisclaimerSection />
