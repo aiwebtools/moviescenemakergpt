@@ -25,11 +25,11 @@ const Index: React.FC = () => {
       createAudioPlayer();
       setAudioPlaying(true);
       
-      // Show toast notification with new text
+      // Show toast notification with new text and longer duration
       toast({
         title: "You're the Star Now",
         description: "Anything you Dream! Welcome to AI Movie Creation Studio - AiWebTools.Ai",
-        duration: 2000,
+        duration: 15000, // 15 seconds
       });
     }, 1000);
     
@@ -50,13 +50,13 @@ const Index: React.FC = () => {
           iframe.contentWindow?.postMessage(message, '*');
           setAudioPlaying(!audioPlaying);
           
-          // Updated toast notification text
+          // Updated toast notification text with longer duration
           toast({
             title: audioPlaying ? "Audio paused" : "You're the Star Now",
             description: audioPlaying 
               ? "Background audio has been paused" 
               : "Anything you Dream! Welcome to AI Movie Creation Studio - AiWebTools.Ai",
-            duration: 2000,
+            duration: 15000, // 15 seconds
           });
         } catch (e) {
           console.log('Could not control audio:', e);
@@ -66,11 +66,11 @@ const Index: React.FC = () => {
         createAudioPlayer();
         setAudioPlaying(true);
         
-        // Updated toast notification text
+        // Updated toast notification text with longer duration
         toast({
           title: "You're the Star Now",
           description: "Anything you Dream! Welcome to AI Movie Creation Studio - AiWebTools.Ai",
-          duration: 2000,
+          duration: 15000, // 15 seconds
         });
       }
     }
