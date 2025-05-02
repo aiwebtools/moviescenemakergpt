@@ -32,7 +32,7 @@ const Index: React.FC = () => {
           iframe.contentWindow?.postMessage(message, '*');
           setAudioPlaying(!audioPlaying);
           
-          // Updated toast notification text with longer duration
+          // Show toast notification with specified duration
           toast({
             title: audioPlaying ? "Audio paused" : "You're the Star Now",
             description: audioPlaying 
@@ -48,7 +48,7 @@ const Index: React.FC = () => {
         createAudioPlayer();
         setAudioPlaying(true);
         
-        // Updated toast notification text with longer duration
+        // Show toast notification with specified duration
         toast({
           title: "You're the Star Now",
           description: "Anything you Dream! Welcome to AI Movie Creation Studio - AiWebTools.Ai",
