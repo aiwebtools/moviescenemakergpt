@@ -22,8 +22,9 @@ const Index: React.FC = () => {
           if (videoContainerRef.current) {
             const iframe = document.createElement('iframe');
             iframe.className = "w-full aspect-video rounded-md";
-            // Optimize video loading with lower quality first, modest bandwidth requirements
-            iframe.src = "https://www.youtube.com/embed/-F1NJYjsQ6k?autoplay=1&mute=1&controls=1&rel=0&showinfo=0&loop=1&playlist=-F1NJYjsQ6k&enablejsapi=1&modestbranding=1&playsinline=1&origin=" + window.location.origin;
+            // Optimize video loading with better performance settings
+            // Use lower resolution at start (hq=0), unmuted, with autoplay and playsinline
+            iframe.src = "https://www.youtube.com/embed/-F1NJYjsQ6k?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&loop=1&playlist=-F1NJYjsQ6k&enablejsapi=1&modestbranding=1&playsinline=1&origin=" + window.location.origin + "&hq=0&cc_load_policy=0";
             iframe.title = "Movie Scene Maker GPT Demo";
             iframe.frameBorder = "0";
             iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
@@ -39,8 +40,8 @@ const Index: React.FC = () => {
         }
       });
     }, { 
-      threshold: 0.1,
-      rootMargin: '200px 0px' // Preload video when within 200px of viewport
+      threshold: 0.01, // Trigger when even a tiny part of the video becomes visible
+      rootMargin: '300px 0px' // Preload video when within 300px of viewport
     });
     
     if (videoContainerRef.current) {
