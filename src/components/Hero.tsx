@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Try Movie Scene Maker GPT
+                USE MOVIE SCENE MAKER GPT NOW
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
               </a>
             </Button>
