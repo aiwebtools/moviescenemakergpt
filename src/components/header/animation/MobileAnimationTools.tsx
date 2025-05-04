@@ -1,5 +1,5 @@
 
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { AnimationTool, ToolCategory } from '@/data/animationTools';
 import {
   Accordion,
@@ -13,6 +13,19 @@ interface MobileAnimationToolsProps {
 }
 
 const MobileAnimationTools: React.FC<MobileAnimationToolsProps> = ({ toolCategories }) => {
+  // Optimize rendering of tool links with useCallback
+  const renderToolLink = useCallback((tool: AnimationTool) => (
+    <a 
+      key={tool.name}
+      href={tool.href}
+      className="text-white hover:text-cyberpunk-neon-blue py-2 transition-all duration-300 hover:translate-x-1"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {tool.name}
+    </a>
+  ), []);
+
   return (
     <Accordion type="single" collapsible className="w-full">
       {toolCategories.map((category, index) => (
@@ -25,18 +38,8 @@ const MobileAnimationTools: React.FC<MobileAnimationToolsProps> = ({ toolCategor
             {category.title}
           </AccordionTrigger>
           <AccordionContent>
-            <div className="flex flex-col space-y-2 pl-4">
-              {category.tools.map((tool) => (
-                <a 
-                  key={tool.name}
-                  href={tool.href}
-                  className="text-white hover:text-cyberpunk-neon-blue py-2 transition-all duration-300 hover:translate-x-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {tool.name}
-                </a>
-              ))}
+            <div className="flex flex-col space-y-2 pl-4 will-change-[height,transform]">
+              {category.tools.map(renderToolLink)}
             </div>
           </AccordionContent>
         </AccordionItem>

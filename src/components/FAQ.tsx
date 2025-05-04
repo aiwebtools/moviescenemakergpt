@@ -59,19 +59,28 @@ const FAQ: React.FC = () => {
         </div>
         
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion 
+            type="single" 
+            collapsible 
+            className="space-y-4"
+          >
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
                 className="cyberpunk-card border-0 overflow-hidden backdrop-blur-sm will-change-contents"
               >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                <AccordionTrigger 
+                  className="px-6 py-4 text-left hover:no-underline will-change-transform"
+                >
                   <span className="text-white hover:text-cyberpunk-neon-blue transition-colors">
                     {faq.question}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-gray-300">
+                <AccordionContent 
+                  className="px-6 pb-4 text-gray-300 will-change-[height,opacity]"
+                  style={{ transform: "translateZ(0)" }} // Hardware acceleration
+                >
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

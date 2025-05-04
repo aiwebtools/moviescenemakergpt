@@ -23,7 +23,11 @@ const CollapsibleContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CollapsiblePrimitive.Content
     ref={ref}
-    className={className}
+    className={`will-change-[height] ${className}`}
+    style={{
+      // Hardware acceleration
+      transform: "translateZ(0)",
+    }}
     {...props}
   />
 ))

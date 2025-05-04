@@ -1,5 +1,5 @@
 
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { AnimationTool, ToolCategory } from '@/data/animationTools';
 import { Button } from '@/components/ui/button';
@@ -21,6 +21,20 @@ interface DesktopAnimationToolsProps {
 }
 
 const DesktopAnimationTools: React.FC<DesktopAnimationToolsProps> = ({ toolCategories }) => {
+  // Optimize rendering of tool links with useCallback
+  const renderToolLink = useCallback((tool: AnimationTool) => (
+    <DropdownMenuItem key={tool.name} asChild>
+      <a 
+        href={tool.href} 
+        className="cursor-pointer py-2 px-4 hover:bg-cyberpunk-dark hover:text-cyberpunk-neon-blue transition-all duration-300 hover:translate-x-1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {tool.name}
+      </a>
+    </DropdownMenuItem>
+  ), []);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -31,7 +45,16 @@ const DesktopAnimationTools: React.FC<DesktopAnimationToolsProps> = ({ toolCateg
           Animate Your Scenes <ChevronDown className="h-4 w-4 transition-transform duration-300 group-open:rotate-180" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 bg-black/90 backdrop-blur-lg border-cyberpunk-neon-blue text-white shadow-lg shadow-cyberpunk-blue/20">
+      <DropdownMenuContent 
+        className="w-56 bg-black/90 backdrop-blur-lg border-cyberpunk-neon-blue text-white shadow-lg shadow-cyberpunk-blue/20"
+        sideOffset={5}
+        align="center"
+        style={{
+          // Apply hardware acceleration
+          transform: "translateZ(0)",
+          willChange: "transform, opacity",
+        }}
+      >
         <Accordion type="single" collapsible className="w-full">
           {toolCategories.map((category, index) => (
             <AccordionItem 
@@ -43,19 +66,8 @@ const DesktopAnimationTools: React.FC<DesktopAnimationToolsProps> = ({ toolCateg
                 {category.title}
               </AccordionTrigger>
               <AccordionContent>
-                <div className="flex flex-col space-y-1">
-                  {category.tools.map((tool) => (
-                    <DropdownMenuItem key={tool.name} asChild>
-                      <a 
-                        href={tool.href} 
-                        className="cursor-pointer py-2 px-4 hover:bg-cyberpunk-dark hover:text-cyberpunk-neon-blue transition-all duration-300 hover:translate-x-1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {tool.name}
-                      </a>
-                    </DropdownMenuItem>
-                  ))}
+                <div className="flex flex-col space-y-1 will-change-[height,transform]">
+                  {category.tools.map(renderToolLink)}
                 </div>
               </AccordionContent>
             </AccordionItem>
