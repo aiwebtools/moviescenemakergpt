@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   Accordion,
   AccordionContent,
@@ -8,7 +8,8 @@ import {
 } from "@/components/ui/accordion";
 
 const FAQ: React.FC = () => {
-  const faqs = [
+  // Use useMemo to prevent recreating the faqs array on each render
+  const faqs = useMemo(() => [
     {
       question: "What is Movie Scene Maker GPT?",
       answer: "Movie Scene Maker GPT is an advanced AI tool that transforms users into the stars of their own cinematic adventures. Upload your photo, choose a movie genre, and get realistic scenes featuring you in the leading role with professional cinematic quality."
@@ -41,7 +42,7 @@ const FAQ: React.FC = () => {
       question: "How can I animate the scenes into a real movie?",
       answer: "After creating your scenes, you can use them with animation tools like Sora (www.sora.com) to transform your still images into animated movie scenes."
     }
-  ];
+  ], []);
 
   return (
     <section id="faq" className="py-20 bg-cyberpunk-darker/80 relative">
@@ -63,7 +64,7 @@ const FAQ: React.FC = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="cyberpunk-card border-0 overflow-hidden backdrop-blur-sm"
+                className="cyberpunk-card border-0 overflow-hidden backdrop-blur-sm will-change-contents"
               >
                 <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
                   <span className="text-white hover:text-cyberpunk-neon-blue transition-colors">
@@ -82,4 +83,4 @@ const FAQ: React.FC = () => {
   );
 };
 
-export default FAQ;
+export default React.memo(FAQ);
