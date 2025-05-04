@@ -26,6 +26,7 @@ interface AnimationToolsDropdownProps {
 
 const AnimationToolsDropdown: React.FC<AnimationToolsDropdownProps> = ({ variant = 'desktop' }) => {
   const animationTools: AnimationTool[] = [
+    { name: 'Google Veo 2', href: 'https://aistudio.google.com/generate-video' },
     { name: 'SORA', href: 'https://www.sora.com' },
     { name: 'KLING', href: 'https://klingai.com' },
     { name: 'HAILUO', href: 'https://hailuoai.video/' },
@@ -38,6 +39,14 @@ const AnimationToolsDropdown: React.FC<AnimationToolsDropdownProps> = ({ variant
   const musicTools: AnimationTool[] = [
     { name: 'SUNO Music Generator', href: 'https://suno.com/invite/@aiwebtools' },
     { name: 'Eleven Labs Voice & Sound Generator', href: 'https://elevenlabs.io/?from=kennybastian5304' },
+  ];
+
+  const lipsyncTools: AnimationTool[] = [
+    { name: 'Hedra', href: 'https://www.hedra.com/' },
+  ];
+
+  const editingTools: AnimationTool[] = [
+    { name: 'Filmora', href: 'https://download.wondershare.com/filmora_full846.exe?_gl=1*5tb5lz*_ga*MjEyMDY2ODg1OC4xNzQ2Mzc1ODk0*_ga_24WTSJBD5B*czE3NDYzNzU4OTMkbzEkZzEkdDE3NDYzNzU5MDAkajU0JGwwJGg0NzQwMjI0NjY.*_gcl_au*MTYxNzMzMTQ1Ni4xNzQ2Mzc1ODk1' },
   ];
 
   if (variant === 'mobile') {
@@ -71,6 +80,48 @@ const AnimationToolsDropdown: React.FC<AnimationToolsDropdownProps> = ({ variant
           <AccordionContent>
             <div className="flex flex-col space-y-2 pl-4">
               {musicTools.map((tool) => (
+                <a 
+                  key={tool.name}
+                  href={tool.href}
+                  className="text-white hover:text-cyberpunk-neon-blue py-2 transition-all duration-300 hover:translate-x-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {tool.name}
+                </a>
+              ))}
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="lipsync-tools-mobile" className="border-none">
+          <AccordionTrigger className="text-white hover:text-cyberpunk-neon-blue py-2 font-medium">
+            Lipsync
+          </AccordionTrigger>
+          <AccordionContent>
+            <div className="flex flex-col space-y-2 pl-4">
+              {lipsyncTools.map((tool) => (
+                <a 
+                  key={tool.name}
+                  href={tool.href}
+                  className="text-white hover:text-cyberpunk-neon-blue py-2 transition-all duration-300 hover:translate-x-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {tool.name}
+                </a>
+              ))}
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="editing-tools-mobile" className="border-none">
+          <AccordionTrigger className="text-white hover:text-cyberpunk-neon-blue py-2 font-medium">
+            Editing Tools
+          </AccordionTrigger>
+          <AccordionContent>
+            <div className="flex flex-col space-y-2 pl-4">
+              {editingTools.map((tool) => (
                 <a 
                   key={tool.name}
                   href={tool.href}
@@ -129,6 +180,50 @@ const AnimationToolsDropdown: React.FC<AnimationToolsDropdownProps> = ({ variant
             <AccordionContent>
               <div className="flex flex-col space-y-1">
                 {musicTools.map((tool) => (
+                  <DropdownMenuItem key={tool.name} asChild>
+                    <a 
+                      href={tool.href} 
+                      className="cursor-pointer py-2 px-4 hover:bg-cyberpunk-dark hover:text-cyberpunk-neon-blue transition-all duration-300 hover:translate-x-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {tool.name}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="lipsync-tools" className="border-none">
+            <AccordionTrigger className="py-2 px-2 hover:text-cyberpunk-neon-blue font-medium">
+              Lipsync
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="flex flex-col space-y-1">
+                {lipsyncTools.map((tool) => (
+                  <DropdownMenuItem key={tool.name} asChild>
+                    <a 
+                      href={tool.href} 
+                      className="cursor-pointer py-2 px-4 hover:bg-cyberpunk-dark hover:text-cyberpunk-neon-blue transition-all duration-300 hover:translate-x-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {tool.name}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="editing-tools" className="border-none">
+            <AccordionTrigger className="py-2 px-2 hover:text-cyberpunk-neon-blue font-medium">
+              Editing Tools
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="flex flex-col space-y-1">
+                {editingTools.map((tool) => (
                   <DropdownMenuItem key={tool.name} asChild>
                     <a 
                       href={tool.href} 
