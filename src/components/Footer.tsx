@@ -1,7 +1,8 @@
 
 import React from 'react';
 import Logo from './Logo';
-import { ArrowRight, Mail, Phone, Film, FileText, Info, Shield, ExternalLink } from 'lucide-react';
+import { ArrowRight, Mail, Phone, Film, FileText, Info, Shield, ExternalLink, Music } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -10,6 +11,33 @@ const Footer: React.FC = () => {
     <footer className="bg-cyberpunk-darker pt-16 pb-8 relative">
       {/* Top border - glowing effect */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyberpunk-blue via-cyberpunk-purple to-cyberpunk-pink" />
+      
+      {/* More AI Web Tools banner */}
+      <div className="container mx-auto px-4 mb-12">
+        <div className="bg-gradient-to-r from-cyberpunk-blue/20 to-cyberpunk-purple/20 backdrop-blur-sm rounded-lg p-6 border border-cyberpunk-blue/30">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-2">Discover More AI Tools</h3>
+              <p className="text-gray-300">Explore our complete collection of AI-powered creation tools.</p>
+            </div>
+            <Button 
+              asChild 
+              size="lg"
+              className="neon-button font-bold tracking-wide"
+            >
+              <a 
+                href="https://www.aiwebtools.ai" 
+                className="flex items-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                More AI Web Tools
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
       
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
@@ -53,6 +81,15 @@ const Footer: React.FC = () => {
                    rel="noopener noreferrer">
                   <Film size={16} className="text-cyberpunk-blue" />
                   Movie Trailer Poster Maker
+                </a>
+              </li>
+              <li>
+                <a href="https://chatgpt.com/g/g-6818b77ba8948191abb42058c0a48770-music-video-maker-gpt" 
+                   className="interactive-link text-gray-400 flex items-center gap-2"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  <Music size={16} className="text-cyberpunk-blue" />
+                  Music Video Maker GPT
                 </a>
               </li>
               <li>

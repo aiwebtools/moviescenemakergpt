@@ -9,6 +9,7 @@ import DisclaimerSection from '@/components/DisclaimerSection';
 import Footer from '@/components/Footer';
 import ConsentPopup from '@/components/ConsentPopup';
 import InteractiveBackground from '@/components/InteractiveBackground';
+import FloatingToolsButton from '@/components/FloatingToolsButton';
 import { Button } from '@/components/ui/button';
 import { Play, VolumeX } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
@@ -107,6 +108,9 @@ const Index: React.FC = () => {
           {audioPlaying ? <VolumeX size={20} /> : <Play size={20} />}
         </Button>
       </div>
+      
+      {/* Floating More AI Web Tools button */}
+      <FloatingToolsButton />
       
       {/* Hidden audio player div */}
       <div ref={audioPlayerRef} className="hidden"></div>
