@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="https://chatgpt.com/g/g-6818b77ba8948191abb42058c0a48770-music-video-maker-gpt" 
+                <a href="https://musicvideomakergpt.lovable.app/?via=aiwebtools" 
                    className="interactive-link text-gray-400 flex items-center gap-2"
                    target="_blank"
                    rel="noopener noreferrer">

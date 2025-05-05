@@ -26,7 +26,7 @@ export const animationToolsData: ToolCategory[] = [
   {
     title: 'Music & FX Generation',
     tools: [
-      { name: 'MUSIC VIDEO MAKER GPT', href: 'https://chatgpt.com/g/g-6818b77ba8948191abb42058c0a48770-music-video-maker-gpt' },
+      { name: 'MUSIC VIDEO MAKER GPT', href: 'https://musicvideomakergpt.lovable.app/?via=aiwebtools' },
       { name: 'UDIO MUSIC GENERATOR', href: 'https://www.udio.com/' },
       { name: 'SUNO Music Generator', href: 'https://suno.com/invite/@aiwebtools' },
       { name: 'Eleven Labs Voice & Sound Generator', href: 'https://elevenlabs.io/?from=kennybastian5304' },
