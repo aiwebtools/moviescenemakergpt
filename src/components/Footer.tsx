@@ -66,6 +66,15 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
+                <a href="https://chatgpt.com/g/g-681a201fe69c8191b99e1636be90139e-commercial-scene-maker-gpt" 
+                   className="interactive-link text-gray-400 flex items-center gap-2"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  <Film size={16} className="text-cyberpunk-blue" />
+                  Commercial Scene Maker GPT
+                </a>
+              </li>
+              <li>
                 <a href="https://moviescriptwritergpt.lovable.app/?via=aiwebtools" 
                    className="interactive-link text-gray-400 flex items-center gap-2"
                    target="_blank"
