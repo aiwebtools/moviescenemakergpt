@@ -14,7 +14,8 @@ const CopyrightBar: React.FC = () => {
         
         <div className="flex items-center gap-4">
           <a href="https://www.aiwebtools.ai" className="interactive-link text-gray-400 text-sm flex items-center gap-1" target="_blank" rel="noopener noreferrer">
-            Visit AiWebTools.Ai <ExternalLink size={12} />
+            Visit AiWebTools.Ai 
+            <ExternalLink size={12} />
           </a>
         </div>
       </div>

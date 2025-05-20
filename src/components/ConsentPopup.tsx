@@ -53,6 +53,16 @@ const ConsentPopup: React.FC = () => {
             <li>Terms of service - as outlined in our legal disclaimer</li>
           </ul>
           
+          <div className="mt-6 p-3 bg-cyberpunk-blue/20 border border-cyberpunk-blue/30 rounded-md">
+            <h3 className="font-semibold text-white mb-2">Usage Information</h3>
+            <p className="text-gray-300 text-sm">
+              <span className="font-medium">ChatGPT Plus users:</span> Enjoy unrestricted usage of Movie Scene Maker GPT.
+            </p>
+            <p className="text-gray-300 text-sm">
+              <span className="font-medium">Free account users:</span> Limited to specific number of interactions every few hours.
+            </p>
+          </div>
+          
           <p className="mt-4 text-gray-300">
             Click "I Agree" to continue and start creating your cinematic adventure.
           </p>

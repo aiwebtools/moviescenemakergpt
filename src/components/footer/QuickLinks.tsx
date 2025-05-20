@@ -17,6 +17,7 @@ const QuickLinks: React.FC = () => {
              rel="noopener noreferrer">
             <Film size={16} className="text-cyberpunk-blue" />
             Movie Scene Maker GPT
+            <ExternalLink size={14} className="ml-auto" />
           </a>
         </li>
         <li>
@@ -26,6 +27,7 @@ const QuickLinks: React.FC = () => {
              rel="noopener noreferrer">
             <Film size={16} className="text-cyberpunk-blue" />
             Commercial Scene Maker GPT
+            <ExternalLink size={14} className="ml-auto" />
           </a>
         </li>
         <li>
@@ -35,6 +37,7 @@ const QuickLinks: React.FC = () => {
              rel="noopener noreferrer">
             <FileText size={16} className="text-cyberpunk-blue" />
             Movie Script Writer GPT
+            <ExternalLink size={14} className="ml-auto" />
           </a>
         </li>
         <li>
@@ -44,6 +47,7 @@ const QuickLinks: React.FC = () => {
              rel="noopener noreferrer">
             <Film size={16} className="text-cyberpunk-blue" />
             Movie Trailer Poster Maker
+            <ExternalLink size={14} className="ml-auto" />
           </a>
         </li>
         <li>
@@ -53,6 +57,7 @@ const QuickLinks: React.FC = () => {
              rel="noopener noreferrer">
             <Music size={16} className="text-cyberpunk-blue" />
             Music Video Maker GPT
+            <ExternalLink size={14} className="ml-auto" />
           </a>
         </li>
         <li>

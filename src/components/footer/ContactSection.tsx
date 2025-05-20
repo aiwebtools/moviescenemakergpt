@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, ArrowRight, Film } from 'lucide-react';
+import { Mail, Phone, ArrowRight, Film, ExternalLink } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   return (
@@ -17,6 +17,7 @@ const ContactSection: React.FC = () => {
              rel="noopener noreferrer">
             <Phone size={16} className="text-cyberpunk-blue" />
             (475) 800-8096
+            <ExternalLink size={14} className="ml-auto" />
           </a>
         </li>
         <li>
@@ -26,6 +27,7 @@ const ContactSection: React.FC = () => {
              rel="noopener noreferrer">
             <Mail size={16} className="text-cyberpunk-blue" />
             Contact@ai-webtools.com
+            <ExternalLink size={14} className="ml-auto" />
           </a>
         </li>
       </ul>
@@ -40,7 +42,7 @@ const ContactSection: React.FC = () => {
         >
           <Film size={16} />
           More AI Tools
-          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          <ExternalLink size={16} />
         </a>
       </div>
     </div>

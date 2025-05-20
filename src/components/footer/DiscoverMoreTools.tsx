@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const DiscoverMoreTools: React.FC = () => {
@@ -24,7 +24,7 @@ const DiscoverMoreTools: React.FC = () => {
               rel="noopener noreferrer"
             >
               More AI Web Tools
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              <ExternalLink size={18} />
             </a>
           </Button>
         </div>

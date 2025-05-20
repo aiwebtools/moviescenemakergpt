@@ -35,7 +35,7 @@ const FloatingToolsButton: React.FC = () => {
           className="flex items-center gap-2"
         >
           More AI Web Tools
-          <ExternalLink size={18} className="ml-1" />
+          <ExternalLink size={18} />
         </a>
       </Button>
     </div>

@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { Users, Clock } from "lucide-react";
 
 const DisclaimerSection: React.FC = () => {
   return (
@@ -10,6 +12,31 @@ const DisclaimerSection: React.FC = () => {
           <p className="text-gray-400 max-w-2xl mx-auto">
             Important information about using our service
           </p>
+        </div>
+        
+        {/* Usage Tiers Alert */}
+        <div className="max-w-4xl mx-auto mb-10">
+          <Alert className="cyberpunk-card border-cyberpunk-blue/30 bg-cyberpunk-blue/10">
+            <AlertTitle className="text-xl font-bold text-white mb-2">Usage Information</AlertTitle>
+            <AlertDescription className="text-gray-300">
+              <div className="grid md:grid-cols-2 gap-4 mt-2">
+                <div className="flex gap-3 items-start">
+                  <Users className="text-cyberpunk-neon-blue h-5 w-5 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-white">ChatGPT Plus Users</h4>
+                    <p className="text-sm">Enjoy unrestricted access to Movie Scene Maker GPT with no usage limits.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <Clock className="text-cyberpunk-neon-blue h-5 w-5 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-white">Free Account Users</h4>
+                    <p className="text-sm">Limited to a specific number of interactions every few hours due to OpenAI's usage policies.</p>
+                  </div>
+                </div>
+              </div>
+            </AlertDescription>
+          </Alert>
         </div>
         
         <div className="cyberpunk-card p-8 max-w-4xl mx-auto">

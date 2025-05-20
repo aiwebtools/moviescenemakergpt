@@ -12,11 +12,14 @@ const NavigationLink: React.FC<NavigationLinkProps> = ({
   href,
   className = "text-white hover:text-cyberpunk-neon-blue transition-colors text-sm relative group"
 }) => {
+  // Determine if link is external by checking for http/https
+  const isExternal = href.startsWith('http') || href.startsWith('//');
+  
   return (
     <a 
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className={className}
     >
       {name}
