@@ -30,6 +30,7 @@ export const animationToolsData: ToolCategory[] = [
       { name: 'UDIO MUSIC GENERATOR', href: 'https://www.udio.com/' },
       { name: 'SUNO Music Generator', href: 'https://suno.com/invite/@aiwebtools' },
       { name: 'Eleven Labs Voice & Sound Generator', href: 'https://elevenlabs.io/?from=kennybastian5304' },
+      { name: 'FLEXCLIP - Add Sound Effects To Video', href: 'https://www.flexclip.com/ai/video-to-ai-sfx-generator/' },
     ]
   },
   {
