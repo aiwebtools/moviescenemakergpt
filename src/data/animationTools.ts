@@ -36,6 +36,7 @@ export const animationToolsData: ToolCategory[] = [
     title: 'Lipsync',
     tools: [
       { name: 'Hedra', href: 'https://www.hedra.com/' },
+      { name: 'VEO FLOW', href: 'https://labs.google/fx/tools/flow' },
     ]
   },
   {
