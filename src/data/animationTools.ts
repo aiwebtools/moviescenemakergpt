@@ -38,6 +38,7 @@ export const animationToolsData: ToolCategory[] = [
     tools: [
       { name: 'Hedra', href: 'https://www.hedra.com/' },
       { name: 'VEO FLOW', href: 'https://labs.google/fx/tools/flow' },
+      { name: '⭐ VEO 3 PROMPT Generator', href: 'https://chatgpt.com/g/g-682faef24c608191808180e89719cb09-veo3-text-to-video-prompt-maker' },
     ]
   },
   {
