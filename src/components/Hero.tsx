@@ -54,19 +54,20 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* Embedded YouTube Video */}
+          {/* Embedded YouTube Video - Optimized for smooth playback */}
           <div className="mb-16 relative">
             <div className="cyberpunk-card p-2 inline-block">
-              <div className="relative w-full max-w-4xl mx-auto">
+              <div className="relative w-full max-w-5xl mx-auto">
                 <div className="aspect-video">
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&hd=1&vq=hd1080&enablejsapi=1&modestbranding=1&playsinline=1"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&hd=1&vq=hd1080&enablejsapi=1&modestbranding=1&playsinline=1&start=0&end=0&loop=0&playlist=&cc_load_policy=0&iv_load_policy=3&fs=1&disablekb=0&origin=" 
                     title="AI Movie Creation Demo"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                     className="rounded-lg"
+                    loading="eager"
                   />
                 </div>
               </div>
