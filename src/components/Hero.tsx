@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* Embedded YouTube Video - Fixed with correct video ID */}
+          {/* Embedded YouTube Video - Optimized for smooth streaming */}
           <div className="mb-16 relative">
             <div className="cyberpunk-card p-2 inline-block">
               <div className="relative w-full max-w-6xl mx-auto">
@@ -62,12 +62,12 @@ const Hero: React.FC = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=1&origin=https://moviescenemaker.lovable.app"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=0&mute=0&controls=1&rel=0&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=1&origin=https://moviescenemaker.lovable.app&preload=metadata&buffering=optimized"
                     title="Movie Scene Maker GPT Demo"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                     className="rounded-lg"
-                    loading="eager"
+                    loading="lazy"
                   />
                 </div>
               </div>
