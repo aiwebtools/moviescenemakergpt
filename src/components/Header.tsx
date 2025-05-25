@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Logo from './Logo';
 import NavLinks from './header/NavLinks';
@@ -48,7 +48,27 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Logo />
+          <div className="flex items-center gap-4">
+            <Logo />
+            
+            {/* Back to Movie Maker Studio Home Button */}
+            <Button 
+              asChild 
+              variant="outline"
+              size="sm"
+              className="hidden md:flex items-center gap-2 border-cyberpunk-neon-blue text-cyberpunk-neon-blue hover:bg-cyberpunk-neon-blue hover:text-black transition-all duration-300"
+            >
+              <a 
+                href="https://moviescenemakergpt.lovable.app/?via=aiwebtools"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Home size={16} />
+                <span className="text-xs font-medium">Studio Home</span>
+              </a>
+            </Button>
+          </div>
           
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center space-x-6">
