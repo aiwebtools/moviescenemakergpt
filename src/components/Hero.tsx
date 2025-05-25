@@ -6,12 +6,12 @@ import { ArrowRight } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Simplified static background */}
+      {/* Minimal static background */}
       <div 
-        className="absolute inset-0 z-0 opacity-20"
+        className="absolute inset-0 z-0 opacity-3"
         style={{
           backgroundImage: 'linear-gradient(to right, #1EAEDB 1px, transparent 1px), linear-gradient(to bottom, #1EAEDB 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
+          backgroundSize: '60px 60px',
           backgroundPosition: 'center',
         }}
       />
@@ -50,47 +50,55 @@ const Hero: React.FC = () => {
             </Button>
           </div>
           
-          {/* Simplified movie frames */}
+          {/* Static movie frames */}
           <div className="mb-16 relative">
             <a 
               href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
-              className="bg-black/20 p-2 rounded-lg inline-block hover:opacity-90 transition-opacity cursor-pointer"
+              className="bg-black/10 p-1 rounded-lg inline-block hover:opacity-95 cursor-pointer"
               aria-label="Try Movie Scene Maker GPT"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-3 gap-1">
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className="relative aspect-video w-20 sm:w-32 md:w-48">
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyberpunk-blue/20 to-cyberpunk-pink/20 rounded flex items-center justify-center">
-                      <span className="text-white/60 text-xs font-medium">Scene {i}</span>
+                  <div key={i} className="relative aspect-video w-full sm:w-40 md:w-60">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyberpunk-blue/10 to-cyberpunk-pink/10 rounded">
+                      <div className="w-full h-full flex items-center justify-center text-white/50 text-xs">
+                        Scene {i}
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             </a>
             
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-cyberpunk-dark px-4 py-2 rounded-full border border-cyberpunk-blue/30">
+            <a 
+              href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
+              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-cyberpunk-dark px-6 py-2 rounded-full border border-cyberpunk-blue/20 hover:border-cyberpunk-blue/40 cursor-pointer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="text-cyberpunk-neon-blue text-sm font-medium">Your Story Awaits</span>
-            </div>
+            </a>
           </div>
 
-          {/* Optimized high-priority YouTube Video */}
+          {/* High priority YouTube Video moved to bottom */}
           <div className="mt-16 relative">
-            <div className="bg-black/20 p-2 rounded-lg inline-block">
-              <div className="relative w-full max-w-4xl mx-auto">
+            <div className="bg-black/10 p-1 rounded-lg inline-block">
+              <div className="relative w-full max-w-5xl mx-auto">
                 <div className="aspect-video">
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&loop=1&playlist=9fpWIE20z7s&vq=hd1080&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&start=0&end=0&iv_load_policy=3&cc_load_policy=0&hl=en&enablejsapi=0"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&loop=1&playlist=9fpWIE20z7s&vq=hd1080&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&disablekb=0&fs=1&iv_load_policy=3&cc_load_policy=0&hl=en&origin=https://lovable.dev&enablejsapi=0&widget_referrer=https://lovable.dev"
                     title="Movie Scene Maker GPT Demo"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                    className="rounded-lg shadow-2xl"
+                    className="rounded-lg"
                     style={{
                       border: 'none',
-                      backgroundColor: '#000'
+                      willChange: 'auto',
+                      isolation: 'isolate'
                     }}
                     loading="eager"
                   />
