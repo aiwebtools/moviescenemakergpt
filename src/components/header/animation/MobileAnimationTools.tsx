@@ -1,7 +1,6 @@
 
 import React, { memo, useCallback } from 'react';
 import { AnimationTool, ToolCategory } from '@/data/animationTools';
-import TimeWarpLink from '../../TimeWarpLink';
 import {
   Accordion,
   AccordionContent,
@@ -16,13 +15,15 @@ interface MobileAnimationToolsProps {
 const MobileAnimationTools: React.FC<MobileAnimationToolsProps> = ({ toolCategories }) => {
   // Optimize rendering of tool links with useCallback
   const renderToolLink = useCallback((tool: AnimationTool) => (
-    <TimeWarpLink 
+    <a 
       key={tool.name}
       href={tool.href}
-      className="text-white hover:text-cyberpunk-neon-blue py-2 transition-all duration-300 hover:translate-x-1 block"
+      className="text-white hover:text-cyberpunk-neon-blue py-2 transition-all duration-300 hover:translate-x-1"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {tool.name}
-    </TimeWarpLink>
+    </a>
   ), []);
 
   return (

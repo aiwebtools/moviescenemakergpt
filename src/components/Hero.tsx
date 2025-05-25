@@ -2,14 +2,10 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import TimeWarpLink from './TimeWarpLink';
-import { useTimeWarp } from '@/hooks/useTimeWarp';
 
 const Hero: React.FC = () => {
-  const { initiateTimeWarp } = useTimeWarp();
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">      
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Simplified static background - no animations */}
       <div 
         className="absolute inset-0 z-0 opacity-5"
@@ -35,18 +31,16 @@ const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
-            <Button 
-              asChild 
-              className="neon-button group"
-              onClick={(e) => {
-                e.preventDefault();
-                initiateTimeWarp("https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt");
-              }}
-            >
-              <div className="flex items-center gap-2 cursor-pointer">
+            <Button asChild className="neon-button group">
+              <a 
+                href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt" 
+                className="flex items-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 USE MOVIE SCENE MAKER GPT NOW
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
-              </div>
+              </a>
             </Button>
             
             <Button asChild variant="outline" className="glass-button">
@@ -92,10 +86,12 @@ const Hero: React.FC = () => {
           
           {/* Simplified movie frames - no animations */}
           <div className="mt-8 relative">
-            <TimeWarpLink 
+            <a 
               href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
-              className="bg-black/20 p-1 rounded-lg inline-block hover:opacity-90 transition-opacity"
+              className="bg-black/20 p-1 rounded-lg inline-block hover:opacity-90 transition-opacity cursor-pointer"
               aria-label="Try Movie Scene Maker GPT"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="grid grid-cols-3 gap-1">
                 {[1, 2, 3].map((i) => (
@@ -108,14 +104,16 @@ const Hero: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </TimeWarpLink>
+            </a>
             
-            <TimeWarpLink 
+            <a 
               href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
-              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-cyberpunk-dark px-6 py-2 rounded-full border border-cyberpunk-blue/30 hover:border-cyberpunk-blue/60 transition-all"
+              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-cyberpunk-dark px-6 py-2 rounded-full border border-cyberpunk-blue/30 hover:border-cyberpunk-blue/60 transition-all cursor-pointer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <span className="text-cyberpunk-neon-blue text-sm font-medium">Your Story Awaits</span>
-            </TimeWarpLink>
+            </a>
           </div>
         </div>
       </div>
