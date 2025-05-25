@@ -2,18 +2,14 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import TimeWarpPortal from './TimeWarpPortal';
 import TimeWarpLink from './TimeWarpLink';
 import { useTimeWarp } from '@/hooks/useTimeWarp';
 
 const Hero: React.FC = () => {
-  const { isWarping, initiateTimeWarp, completeTimeWarp } = useTimeWarp();
+  const { initiateTimeWarp } = useTimeWarp();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Time Warp Portal */}
-      <TimeWarpPortal isActive={isWarping} onComplete={completeTimeWarp} />
-      
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">      
       {/* Simplified static background - no animations */}
       <div 
         className="absolute inset-0 z-0 opacity-5"
