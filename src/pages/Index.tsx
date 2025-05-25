@@ -10,16 +10,17 @@ import Footer from '@/components/Footer';
 
 const Index: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-cyberpunk-dark" style={{ willChange: 'auto' }}>
+    <div className="min-h-screen flex flex-col bg-cyberpunk-dark">
       <Header />
       
-      <main style={{ isolation: 'isolate' }}>
+      <main>
         <Hero />
         <HowItWorks />
         <Testimonials />
         <FAQ />
         <DisclaimerSection />
       </main>
+      
       <Footer />
     </div>
   );
