@@ -49,35 +49,9 @@ const Hero: React.FC = () => {
               </a>
             </Button>
           </div>
-
-          {/* Highly optimized YouTube Video for buffer-free playback */}
-          <div className="mb-16 relative">
-            <div className="bg-black/10 p-1 rounded-lg inline-block">
-              <div className="relative w-full max-w-5xl mx-auto">
-                <div className="aspect-video">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=1&loop=1&playlist=9fpWIE20z7s&vq=hd1080&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&disablekb=0&fs=1&iv_load_policy=3&cc_load_policy=0&hl=en&origin=https://lovable.dev&enablejsapi=0&widget_referrer=https://lovable.dev"
-                    title="Movie Scene Maker GPT Demo"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className="rounded-lg"
-                    style={{
-                      border: 'none',
-                      willChange: 'auto',
-                      isolation: 'isolate'
-                    }}
-                    loading="eager"
-                    fetchPriority="high"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
           
           {/* Static movie frames */}
-          <div className="mt-16 relative">
+          <div className="mb-16 relative">
             <a 
               href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
               className="bg-black/10 p-1 rounded-lg inline-block hover:opacity-95 cursor-pointer"
@@ -106,6 +80,31 @@ const Hero: React.FC = () => {
             >
               <span className="text-cyberpunk-neon-blue text-sm font-medium">Your Story Awaits</span>
             </a>
+          </div>
+
+          {/* High priority YouTube Video moved to bottom */}
+          <div className="mt-16 relative">
+            <div className="bg-black/10 p-1 rounded-lg inline-block">
+              <div className="relative w-full max-w-5xl mx-auto">
+                <div className="aspect-video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&loop=1&playlist=9fpWIE20z7s&vq=hd1080&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&disablekb=0&fs=1&iv_load_policy=3&cc_load_policy=0&hl=en&origin=https://lovable.dev&enablejsapi=0&widget_referrer=https://lovable.dev"
+                    title="Movie Scene Maker GPT Demo"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="rounded-lg"
+                    style={{
+                      border: 'none',
+                      willChange: 'auto',
+                      isolation: 'isolate'
+                    }}
+                    loading="eager"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
