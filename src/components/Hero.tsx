@@ -93,7 +93,6 @@ const Hero: React.FC = () => {
                       backgroundColor: '#000'
                     }}
                     loading="eager"
-                    fetchpriority="high"
                   />
                 </div>
               </div>
