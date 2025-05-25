@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -50,26 +49,33 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* YouTube Video */}
+          {/* Optimized Glowing YouTube Video */}
           <div className="mt-16 mb-8 relative">
-            <div className="bg-black/20 p-2 rounded-lg inline-block">
-              <div className="relative w-full max-w-4xl mx-auto">
+            <div className="relative w-full max-w-3xl mx-auto">
+              {/* Glowing border effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyberpunk-blue via-cyberpunk-purple to-cyberpunk-pink rounded-xl blur-sm opacity-75 animate-pulse-glow"></div>
+              
+              {/* Video container */}
+              <div className="relative bg-black rounded-lg overflow-hidden shadow-2xl">
                 <div className="aspect-video">
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&loop=1&playlist=9fpWIE20z7s&origin=https://lovable.dev&widget_referrer=lovable"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=0&mute=1&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&start=0&origin=https://lovable.dev"
                     title="Movie Scene Maker GPT Demo"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                     className="rounded-lg"
-                    loading="eager"
+                    loading="lazy"
                     style={{
                       border: 'none',
                       backgroundColor: '#000'
                     }}
                   />
                 </div>
+                
+                {/* Additional glow overlay */}
+                <div className="absolute inset-0 rounded-lg shadow-[0_0_20px_rgba(0,240,255,0.3),0_0_40px_rgba(0,240,255,0.1)] pointer-events-none"></div>
               </div>
             </div>
           </div>
