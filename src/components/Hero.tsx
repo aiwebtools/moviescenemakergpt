@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -49,7 +50,7 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* Optimized Glowing YouTube Video */}
+          {/* Instant Loading Optimized YouTube Video */}
           <div className="mt-16 mb-8 relative">
             <div className="relative w-full max-w-3xl mx-auto">
               {/* Glowing border effect */}
@@ -61,12 +62,13 @@ const Hero: React.FC = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=0&mute=1&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&start=0&origin=https://lovable.dev"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=0&mute=1&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&start=0&origin=https://lovable.dev&preload=metadata&enablejsapi=1"
                     title="Movie Scene Maker GPT Demo"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                     className="rounded-lg"
-                    loading="lazy"
+                    loading="eager"
+                    fetchpriority="high"
                     style={{
                       border: 'none',
                       backgroundColor: '#000'
