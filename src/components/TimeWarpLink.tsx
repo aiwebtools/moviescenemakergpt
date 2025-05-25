@@ -19,8 +19,9 @@ const TimeWarpLink: React.FC<TimeWarpLinkProps> = ({
   const { initiateTimeWarp } = useTimeWarp();
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    console.log('TimeWarpLink clicked with href:', href);
     event.preventDefault();
-    initiateTimeWarp(href);
+    initiateTimeWarp(href, event);
   };
 
   return (

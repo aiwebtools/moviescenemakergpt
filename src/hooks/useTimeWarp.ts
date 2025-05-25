@@ -41,14 +41,29 @@ export const useTimeWarp = () => {
       event.preventDefault();
     }
     
+    console.log('Initiating time warp to:', url);
     setIsWarping(true);
     setPendingUrl(url);
     playWarpSound();
   }, [playWarpSound]);
 
   const completeTimeWarp = useCallback(() => {
+    console.log('Completing time warp to:', pendingUrl);
     if (pendingUrl) {
-      window.open(pendingUrl, '_blank', 'noopener,noreferrer');
+      // Check if it's an internal link (starts with # or /)
+      if (pendingUrl.startsWith('#')) {
+        // For hash links, scroll to the element
+        const element = document.querySelector(pendingUrl);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else if (pendingUrl.startsWith('/')) {
+        // For internal routes, navigate normally
+        window.location.href = pendingUrl;
+      } else {
+        // For external links, open in new window
+        window.open(pendingUrl, '_blank', 'noopener,noreferrer');
+      }
     }
     setIsWarping(false);
     setPendingUrl(null);

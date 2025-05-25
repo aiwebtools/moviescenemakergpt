@@ -25,14 +25,12 @@ const NavigationLink: React.FC<NavigationLinkProps> = ({
     );
   }
   
+  // For internal links (like #how-it-works), also use TimeWarpLink for consistency
   return (
-    <a 
-      href={href}
-      className={className}
-    >
+    <TimeWarpLink href={href} className={className}>
       {name}
       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyberpunk-neon-blue transition-all duration-300 group-hover:w-full"></span>
-    </a>
+    </TimeWarpLink>
   );
 };
 
