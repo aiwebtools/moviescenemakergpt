@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
             Become the star of your own cinematic adventure with Movie Scene Maker GPT. Create stunning, personalized movie scenes featuring you in any genre, setting, or storyline.
           </p>
           
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
+          <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
             <Button asChild className="neon-button group">
               <a 
                 href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt" 
@@ -52,6 +52,25 @@ const Hero: React.FC = () => {
                 Learn How It Works
               </a>
             </Button>
+          </div>
+
+          {/* Embedded YouTube Video */}
+          <div className="mb-16 relative">
+            <div className="cyberpunk-card p-2 inline-block">
+              <div className="relative w-full max-w-4xl mx-auto">
+                <div className="aspect-video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&hd=1&vq=hd1080&enablejsapi=1&modestbranding=1&playsinline=1"
+                    title="AI Movie Creation Demo"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           
           {/* Movie frames mockup - Now clickable */}
