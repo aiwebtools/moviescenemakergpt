@@ -6,9 +6,9 @@ import { ArrowRight } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Simplified background - removed complex animations */}
+      {/* Simplified static background - no animations */}
       <div 
-        className="absolute inset-0 z-0 opacity-10"
+        className="absolute inset-0 z-0 opacity-5"
         style={{
           backgroundImage: 'linear-gradient(to right, #1EAEDB 1px, transparent 1px), linear-gradient(to bottom, #1EAEDB 1px, transparent 1px)',
           backgroundSize: '40px 40px',
@@ -16,16 +16,14 @@ const Hero: React.FC = () => {
         }}
       />
       
-      {/* Temporarily removed animated glowing orbs that could interfere with video */}
-      
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            <span className="text-gradient bg-gradient-to-r from-cyberpunk-blue to-cyberpunk-pink bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyberpunk-blue to-cyberpunk-pink bg-clip-text text-transparent">
               Transform Yourself Into
             </span>
             <br />
-            <span className="cyberpunk-heading text-white">A Movie Star</span>
+            <span className="text-white font-bold">A Movie Star</span>
           </h1>
           
           <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -52,31 +50,34 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* Optimized YouTube Video - Removed all potential interference */}
+          {/* Optimized YouTube Video for smooth 1080p playback */}
           <div className="mb-16 relative">
-            <div className="cyberpunk-card p-2 inline-block">
+            <div className="bg-black/20 p-2 rounded-lg inline-block">
               <div className="relative w-full max-w-6xl mx-auto">
                 <div className="aspect-video">
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?rel=0&showinfo=0&modestbranding=1&playsinline=1"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=1&vq=hd1080&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&disablekb=0&fs=1&iv_load_policy=3&start=0&enablejsapi=0"
                     title="Movie Scene Maker GPT Demo"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                     className="rounded-lg"
-                    loading="lazy"
+                    style={{
+                      border: 'none',
+                      willChange: 'auto'
+                    }}
                   />
                 </div>
               </div>
             </div>
           </div>
           
-          {/* Simplified movie frames mockup - removed animations */}
+          {/* Simplified movie frames - no animations */}
           <div className="mt-16 relative">
             <a 
               href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
-              className="cyberpunk-card p-1 inline-block hover:opacity-90 transition-opacity cursor-pointer"
+              className="bg-black/20 p-1 rounded-lg inline-block hover:opacity-90 transition-opacity cursor-pointer"
               aria-label="Try Movie Scene Maker GPT"
               target="_blank"
               rel="noopener noreferrer"
@@ -84,7 +85,7 @@ const Hero: React.FC = () => {
               <div className="grid grid-cols-3 gap-1">
                 {[1, 2, 3].map((i) => (
                   <div key={i} className="relative aspect-video w-full sm:w-40 md:w-60">
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyberpunk-blue/20 to-cyberpunk-pink/20">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyberpunk-blue/20 to-cyberpunk-pink/20 rounded">
                       <div className="w-full h-full flex items-center justify-center text-white/70 text-xs">
                         Scene {i}
                       </div>
