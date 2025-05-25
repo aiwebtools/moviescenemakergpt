@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* YouTube Video - Re-added autoplay with mute for better compatibility */}
+          {/* Optimized YouTube Video - Removed all potential interference */}
           <div className="mb-16 relative">
             <div className="cyberpunk-card p-2 inline-block">
               <div className="relative w-full max-w-6xl mx-auto">
@@ -60,9 +60,9 @@ const Hero: React.FC = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=1&rel=0&showinfo=0&modestbranding=1&playsinline=1"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?rel=0&showinfo=0&modestbranding=1&playsinline=1"
                     title="Movie Scene Maker GPT Demo"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                     className="rounded-lg"
                     loading="lazy"
