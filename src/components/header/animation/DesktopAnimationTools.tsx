@@ -3,6 +3,7 @@ import React, { memo, useCallback } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { AnimationTool, ToolCategory } from '@/data/animationTools';
 import { Button } from '@/components/ui/button';
+import TimeWarpLink from '../../TimeWarpLink';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,14 +25,12 @@ const DesktopAnimationTools: React.FC<DesktopAnimationToolsProps> = ({ toolCateg
   // Optimize rendering of tool links with useCallback
   const renderToolLink = useCallback((tool: AnimationTool) => (
     <DropdownMenuItem key={tool.name} asChild>
-      <a 
+      <TimeWarpLink 
         href={tool.href} 
-        className="cursor-pointer py-2 px-4 hover:bg-cyberpunk-dark hover:text-cyberpunk-neon-blue transition-all duration-300 hover:translate-x-1"
-        target="_blank"
-        rel="noopener noreferrer"
+        className="cursor-pointer py-2 px-4 hover:bg-cyberpunk-dark hover:text-cyberpunk-neon-blue transition-all duration-300 hover:translate-x-1 w-full block"
       >
         {tool.name}
-      </a>
+      </TimeWarpLink>
     </DropdownMenuItem>
   ), []);
 

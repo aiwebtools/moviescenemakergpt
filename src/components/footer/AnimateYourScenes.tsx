@@ -3,6 +3,7 @@ import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { animationToolsData } from '@/data/animationTools';
+import TimeWarpLink from '../TimeWarpLink';
 
 const AnimateYourScenes: React.FC = () => {
   return (
@@ -19,16 +20,14 @@ const AnimateYourScenes: React.FC = () => {
               <AccordionContent>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-2">
                   {category.tools.map((tool, toolIdx) => (
-                    <a 
+                    <TimeWarpLink 
                       key={toolIdx}
                       href={tool.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="py-2 px-4 bg-cyberpunk-blue/20 hover:bg-cyberpunk-blue/30 rounded-md text-white hover:text-cyberpunk-neon-blue transition-colors flex items-center justify-between gap-2"
                     >
                       {tool.name}
                       <ExternalLink size={14} />
-                    </a>
+                    </TimeWarpLink>
                   ))}
                 </div>
               </AccordionContent>
