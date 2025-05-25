@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* Optimized YouTube Video - moved to bottom and optimized for performance */}
+          {/* First YouTube Video */}
           <div className="mt-16 mb-8 relative">
             <div className="bg-black/20 p-2 rounded-lg inline-block">
               <div className="relative w-full max-w-4xl mx-auto">
@@ -60,6 +60,30 @@ const Hero: React.FC = () => {
                     height="100%"
                     src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&loop=1&playlist=9fpWIE20z7s&origin=https://lovable.dev&widget_referrer=lovable"
                     title="Movie Scene Maker GPT Demo"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="rounded-lg"
+                    loading="eager"
+                    style={{
+                      border: 'none',
+                      backgroundColor: '#000'
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Second YouTube Video - Duplicate */}
+          <div className="mt-8 mb-8 relative">
+            <div className="bg-black/20 p-2 rounded-lg inline-block">
+              <div className="relative w-full max-w-4xl mx-auto">
+                <div className="aspect-video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&loop=1&playlist=9fpWIE20z7s&origin=https://lovable.dev&widget_referrer=lovable"
+                    title="Movie Scene Maker GPT Demo - Duplicate"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                     className="rounded-lg"
