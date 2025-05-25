@@ -50,22 +50,23 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* Optimized YouTube Video for smooth 1080p playback */}
-          <div className="mb-16 relative">
+          {/* Optimized YouTube Video - moved to bottom and optimized for performance */}
+          <div className="mt-16 mb-8 relative">
             <div className="bg-black/20 p-2 rounded-lg inline-block">
-              <div className="relative w-full max-w-6xl mx-auto">
+              <div className="relative w-full max-w-4xl mx-auto">
                 <div className="aspect-video">
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=1&vq=hd1080&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&disablekb=0&fs=1&iv_load_policy=3&start=0&enablejsapi=0"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&loop=1&playlist=9fpWIE20z7s&origin=https://lovable.dev&widget_referrer=lovable"
                     title="Movie Scene Maker GPT Demo"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                     className="rounded-lg"
+                    loading="eager"
                     style={{
                       border: 'none',
-                      willChange: 'auto'
+                      backgroundColor: '#000'
                     }}
                   />
                 </div>
@@ -74,7 +75,7 @@ const Hero: React.FC = () => {
           </div>
           
           {/* Simplified movie frames - no animations */}
-          <div className="mt-16 relative">
+          <div className="mt-8 relative">
             <a 
               href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
               className="bg-black/20 p-1 rounded-lg inline-block hover:opacity-90 transition-opacity cursor-pointer"
