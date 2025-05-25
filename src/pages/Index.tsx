@@ -7,18 +7,20 @@ import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import DisclaimerSection from '@/components/DisclaimerSection';
 import Footer from '@/components/Footer';
-import ConsentPopup from '@/components/ConsentPopup';
-import InteractiveBackground from '@/components/InteractiveBackground';
-import FloatingToolsButton from '@/components/FloatingToolsButton';
+// Temporarily removed ConsentPopup and InteractiveBackground to test video performance
+// import ConsentPopup from '@/components/ConsentPopup';
+// import InteractiveBackground from '@/components/InteractiveBackground';
+// import FloatingToolsButton from '@/components/FloatingToolsButton';
 
 const Index: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-cyberpunk-dark">
-      <InteractiveBackground />
+      {/* Temporarily disabled interactive background */}
+      {/* <InteractiveBackground /> */}
       <Header />
       
-      {/* Floating More AI Web Tools button */}
-      <FloatingToolsButton />
+      {/* Temporarily disabled floating tools button */}
+      {/* <FloatingToolsButton /> */}
       
       <main>
         <Hero />
@@ -28,7 +30,8 @@ const Index: React.FC = () => {
         <DisclaimerSection />
       </main>
       <Footer />
-      <ConsentPopup />
+      {/* Temporarily disabled consent popup */}
+      {/* <ConsentPopup /> */}
     </div>
   );
 };

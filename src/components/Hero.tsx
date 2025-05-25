@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Cyberpunk grid background */}
+      {/* Simplified background - removed complex animations */}
       <div 
         className="absolute inset-0 z-0 opacity-10"
         style={{
@@ -16,9 +16,7 @@ const Hero: React.FC = () => {
         }}
       />
       
-      {/* Glowing orbs */}
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-cyberpunk-purple/20 filter blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-cyberpunk-blue/20 filter blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      {/* Temporarily removed animated glowing orbs that could interfere with video */}
       
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -54,7 +52,7 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* Embedded YouTube Video - Optimized for smooth streaming */}
+          {/* Optimized YouTube Video - Removed all potential interference */}
           <div className="mb-16 relative">
             <div className="cyberpunk-card p-2 inline-block">
               <div className="relative w-full max-w-6xl mx-auto">
@@ -62,9 +60,9 @@ const Hero: React.FC = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=0&mute=0&controls=1&rel=0&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=1&origin=https://moviescenemaker.lovable.app&preload=metadata&buffering=optimized"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?rel=0&showinfo=0&modestbranding=1&playsinline=1"
                     title="Movie Scene Maker GPT Demo"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                     className="rounded-lg"
                     loading="lazy"
@@ -74,7 +72,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
           
-          {/* Movie frames mockup - Now clickable */}
+          {/* Simplified movie frames mockup - removed animations */}
           <div className="mt-16 relative">
             <a 
               href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
@@ -86,7 +84,7 @@ const Hero: React.FC = () => {
               <div className="grid grid-cols-3 gap-1">
                 {[1, 2, 3].map((i) => (
                   <div key={i} className="relative aspect-video w-full sm:w-40 md:w-60">
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyberpunk-blue/20 to-cyberpunk-pink/20 animate-pulse-glow" style={{ animationDelay: `${i * 0.2}s` }}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyberpunk-blue/20 to-cyberpunk-pink/20">
                       <div className="w-full h-full flex items-center justify-center text-white/70 text-xs">
                         Scene {i}
                       </div>
