@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* Auto-playing 1080p YouTube Video */}
+          {/* Optimized Smooth Playback YouTube Video */}
           <div className="mt-16 mb-8 relative">
             <div className="relative w-full max-w-2xl mx-auto">
               {/* Glowing border effect */}
@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&start=0&origin=https://lovable.dev&enablejsapi=1&iv_load_policy=3&fs=1&cc_load_policy=0&disablekb=0&widget_referrer=https://lovable.dev&vq=hd1080&loop=0&color=white&hl=en&cc_lang_pref=en"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&start=0&origin=https://lovable.dev&enablejsapi=1&iv_load_policy=3&fs=1&cc_load_policy=0&disablekb=0&widget_referrer=https://lovable.dev&vq=hd1080&loop=0&color=white&hl=en&cc_lang_pref=en&fmt=22&html5=1&buffer=3&preload=auto"
                     title="Movie Scene Maker GPT Demo"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                     allowFullScreen
@@ -70,7 +70,10 @@ const Hero: React.FC = () => {
                     loading="eager"
                     style={{
                       border: 'none',
-                      backgroundColor: '#000'
+                      backgroundColor: '#000',
+                      willChange: 'transform',
+                      backfaceVisibility: 'hidden',
+                      transform: 'translateZ(0)'
                     }}
                   />
                 </div>
