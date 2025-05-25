@@ -50,23 +50,22 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* Optimized YouTube Video - moved to bottom and optimized for performance */}
+          {/* Simplified YouTube Video - optimized for performance */}
           <div className="mt-16 mb-8 relative">
             <div className="bg-black/20 p-2 rounded-lg inline-block">
-              <div className="relative w-full max-w-4xl mx-auto">
+              <div className="relative w-full max-w-3xl mx-auto">
                 <div className="aspect-video">
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&loop=1&playlist=9fpWIE20z7s&origin=https://lovable.dev&widget_referrer=lovable"
+                    src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=1&loop=1&playlist=9fpWIE20z7s&controls=1&modestbranding=1&rel=0"
                     title="Movie Scene Maker GPT Demo"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="rounded-lg"
-                    loading="eager"
+                    loading="lazy"
                     style={{
                       border: 'none',
-                      backgroundColor: '#000'
                     }}
                   />
                 </div>
