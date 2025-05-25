@@ -55,9 +55,9 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Embedded YouTube Video */}
-          <div className="mb-16 relative w-full">
-            <div className="cyberpunk-card p-4 inline-block w-full">
-              <div className="relative w-full max-w-6xl mx-auto">
+          <div className="mb-16 relative">
+            <div className="cyberpunk-card p-2 inline-block">
+              <div className="relative w-full max-w-4xl mx-auto">
                 <div className="aspect-video">
                   <iframe
                     width="100%"
