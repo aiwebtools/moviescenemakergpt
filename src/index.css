@@ -1,41 +1,39 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 225 30% 8%;
-    --foreground: 210 40% 98%;
+    --background: 245 20% 8%;
+    --foreground: 280 20% 98%;
 
-    --card: 228 26% 13%;
+    --card: 245 25% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 228 26% 13%;
+    --popover: 245 25% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 190 100% 50%;
+    --primary: 51 100% 50%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 290 100% 60%;
+    --secondary: 280 30% 60%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 228 16% 20%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 245 16% 20%;
+    --muted-foreground: 280 20% 65%;
 
-    --accent: 262 80% 50%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 280 50% 70%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 228 16% 24%;
-    --input: 228 16% 24%;
-    --ring: 190 100% 50%;
+    --border: 245 16% 24%;
+    --input: 245 16% 24%;
+    --ring: 51 100% 50%;
     
     --radius: 0.75rem;
-
-    /* Optimized animation durations */
-    --accordion-duration: 200ms;
   }
 }
 
@@ -45,18 +43,20 @@
   }
 
   body {
-    @apply bg-cyberpunk-dark text-foreground;
-    background-image: 
-      radial-gradient(circle at top right, rgba(139, 92, 246, 0.1), transparent 80%),
-      radial-gradient(circle at bottom left, rgba(30, 174, 219, 0.1), transparent 80%);
+    @apply bg-divine-deep text-foreground;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(147, 112, 219, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(25, 25, 112, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #0F0A1A 0%, #1A0F2E 100%);
     background-attachment: fixed;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
   }
 
   html {
     @apply scroll-smooth;
   }
 
-  /* Optimize accordion animations */
   [data-state="open"] {
     will-change: transform, opacity, height;
   }
@@ -67,119 +67,177 @@
 }
 
 @layer components {
-  .neon-border {
-    @apply border border-transparent relative;
-    position: relative;
+  .divine-card {
+    @apply bg-black/30 backdrop-blur-xl border border-divine-gold/20 rounded-2xl overflow-hidden relative;
+    box-shadow: 
+      0 0 30px rgba(255, 215, 0, 0.3),
+      0 0 60px rgba(147, 112, 219, 0.2),
+      inset 0 1px 0 rgba(255, 215, 0, 0.1);
   }
   
-  .neon-border::before {
+  .divine-card::before {
     content: '';
-    @apply absolute -inset-[1px] bg-gradient-to-r from-cyberpunk-blue via-cyberpunk-purple to-cyberpunk-pink rounded-[inherit] z-[-1];
-    animation: rotate 3s linear infinite;
+    @apply absolute inset-0 bg-gradient-to-br from-divine-gold/5 via-transparent to-divine-sacred/5 pointer-events-none;
   }
   
-  .cyberpunk-card {
-    @apply bg-black/40 backdrop-blur-md border border-white/10 rounded-lg overflow-hidden;
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  .divine-text {
+    @apply animate-divine-glow;
+    background: linear-gradient(135deg, #FFD700 0%, #F0F8FF 50%, #DDA0DD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
-  .neon-text {
-    @apply animate-glow;
+  .divine-button {
+    @apply relative inline-flex items-center justify-center px-8 py-4 overflow-hidden 
+           font-bold rounded-2xl transition-all duration-500 animate-heavenly-float;
+    background: linear-gradient(135deg, #FFD700 0%, #DDA0DD 50%, #9370DB 100%);
+    color: #0F0A1A;
+    box-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.5),
+      0 0 40px rgba(147, 112, 219, 0.3);
   }
   
-  .glass-button {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-6 py-3 
-           transition-all duration-300 hover:bg-white/20 hover:border-white/30 
-           text-white font-medium;
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+  .divine-button:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 
+      0 0 40px rgba(255, 215, 0, 0.8),
+      0 0 80px rgba(147, 112, 219, 0.5);
   }
   
-  .glass-button:hover {
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
-    transform: translateY(-2px);
-  }
-  
-  .neon-button {
-    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden 
-           font-bold rounded-md bg-cyberpunk-blue text-black transition-all duration-300;
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-  }
-  
-  .neon-button:hover {
-    @apply bg-cyberpunk-pink;
-    box-shadow: 0 0 20px rgba(217, 70, 239, 0.7);
-    transform: translateY(-3px) scale(1.05);
-  }
-  
-  .neon-button::before {
+  .divine-button::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-cyberpunk-blue via-cyberpunk-purple to-cyberpunk-pink opacity-0 transition-opacity duration-300;
-    z-index: -1;
-    border-radius: inherit;
+    @apply absolute inset-0 bg-gradient-to-r from-divine-pearl via-divine-gold to-divine-ethereal opacity-0 transition-opacity duration-500;
+    animation: sacred-shimmer 3s linear infinite;
   }
   
-  .neon-button:hover::before {
+  .divine-button:hover::before {
     @apply opacity-30;
   }
 
-  .cyberpunk-heading {
-    @apply font-bold relative inline-block;
-    text-shadow: 2px 2px 0px rgba(0, 240, 255, 0.5);
+  .divine-heading {
+    @apply font-bold relative inline-block animate-divine-glow;
+    background: linear-gradient(135deg, #FFD700 0%, #F0F8FF 30%, #DDA0DD 70%, #9370DB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
   }
   
-  .cyberpunk-heading::after {
+  .divine-heading::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-cyberpunk-blue to-cyberpunk-pink;
+    @apply absolute bottom-0 left-0 w-full h-1;
+    background: linear-gradient(90deg, #FFD700, #DDA0DD, #9370DB);
+    border-radius: 2px;
+    animation: sacred-shimmer 3s linear infinite;
+    background-size: 200% 100%;
   }
   
-  .shadow-glow {
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+  .divine-glow {
+    box-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.5),
+      0 0 40px rgba(147, 112, 219, 0.3);
   }
   
-  .shadow-glow:hover {
-    box-shadow: 0 0 25px rgba(0, 240, 255, 0.7);
+  .divine-glow:hover {
+    box-shadow: 
+      0 0 40px rgba(255, 215, 0, 0.7),
+      0 0 80px rgba(147, 112, 219, 0.5);
   }
 
-  .interactive-link {
-    @apply relative overflow-hidden transition-all duration-300;
+  .divine-link {
+    @apply relative overflow-hidden transition-all duration-500 animate-ethereal-wave;
+    background: linear-gradient(135deg, #E6E6FA, #DDA0DD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
-  .interactive-link::after {
+  .divine-link::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-cyberpunk-blue transition-all duration-300;
+    @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-500;
+    background: linear-gradient(90deg, #FFD700, #DDA0DD);
   }
   
-  .interactive-link:hover::after {
+  .divine-link:hover::after {
     @apply w-full;
   }
   
-  .interactive-link:hover {
-    @apply text-cyberpunk-neon-blue;
-    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  .divine-link:hover {
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  }
+  
+  .heavenly-border {
+    @apply border border-transparent relative;
+    animation: divine-pulse 4s infinite;
+  }
+  
+  .sacred-spacing {
+    @apply py-32 px-8;
+  }
+
+  /* Keep existing classes for compatibility but with divine upgrades */
+  .cyberpunk-card {
+    @apply divine-card;
+  }
+  
+  .neon-text {
+    @apply divine-text;
+  }
+  
+  .glass-button {
+    @apply bg-divine-deep/20 backdrop-blur-xl border border-divine-gold/30 rounded-2xl px-8 py-4 
+           transition-all duration-500 hover:bg-divine-gold/10 hover:border-divine-gold/50 
+           text-divine-light font-medium animate-heavenly-float;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  
+  .glass-button:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    transform: translateY(-5px) scale(1.02);
+  }
+  
+  .neon-button {
+    @apply divine-button;
+  }
+
+  .cyberpunk-heading {
+    @apply divine-heading;
+  }
+  
+  .shadow-glow {
+    @apply divine-glow;
+  }
+
+  .interactive-link {
+    @apply divine-link;
   }
   
   .pulse-border {
-    @apply border border-transparent relative;
-    animation: pulseBorder 2s infinite;
-  }
-  
-  @keyframes pulseBorder {
-    0%, 100% {
-      box-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
-    }
-    50% {
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
-    }
+    @apply heavenly-border;
   }
 }
 
+@keyframes sacred-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes divine-ascension {
+  0%, 100% { 
+    transform: translateY(0px) scale(1);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-20px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Keep existing keyframes for compatibility */
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes float {
@@ -188,25 +246,13 @@
 }
 
 @keyframes accordion-down {
-  from {
-    height: 0;
-    opacity: 0;
-  }
-  to {
-    height: var(--radix-accordion-content-height);
-    opacity: 1;
-  }
+  from { height: 0; opacity: 0; }
+  to { height: var(--radix-accordion-content-height); opacity: 1; }
 }
 
 @keyframes accordion-up {
-  from {
-    height: var(--radix-accordion-content-height);
-    opacity: 1;
-  }
-  to {
-    height: 0;
-    opacity: 0;
-  }
+  from { height: var(--radix-accordion-content-height); opacity: 1; }
+  to { height: 0; opacity: 0; }
 }
 
 #root {

@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,21 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Cyberpunk theme colors
+				// Divine theme colors
+				divine: {
+					"deep": "#0F0A1A",
+					"dark": "#1A0F2E", 
+					"purple": "#4A1A5C",
+					"gold": "#FFD700",
+					"pearl": "#F8F8FF",
+					"light": "#E6E6FA",
+					"celestial": "#191970",
+					"ethereal": "#DDA0DD",
+					"radiant": "#FFFACD",
+					"luminous": "#F0F8FF",
+					"sacred": "#9370DB"
+				},
+				// Keep existing cyberpunk colors for compatibility
 				cyberpunk: {
 					"dark": "#1A1F2C",
 					"darker": "#141821",
@@ -90,30 +103,51 @@ export default {
 					from: { height: 'var(--radix-accordion-content-height)' },
 					to: { height: '0' }
 				},
-				'glow': {
+				'divine-glow': {
 					'0%, 100%': { 
-						textShadow: '0 0 10px rgba(0, 240, 255, 0.5), 0 0 15px rgba(0, 240, 255, 0.3)'
+						textShadow: '0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.4)'
 					},
 					'50%': { 
-						textShadow: '0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.5)'
+						textShadow: '0 0 30px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 215, 0, 0.6)'
 					}
 				},
-				'float': {
-					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-10px)' }
+				'heavenly-float': {
+					'0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+					'33%': { transform: 'translateY(-15px) rotate(1deg)' },
+					'66%': { transform: 'translateY(-8px) rotate(-1deg)' }
 				},
-				'pulse-glow': {
+				'divine-pulse': {
 					'0%, 100%': { 
-						boxShadow: '0 0 5px rgba(0, 240, 255, 0.5), 0 0 10px rgba(0, 240, 255, 0.3)'
+						boxShadow: '0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(147, 112, 219, 0.4)'
 					},
 					'50%': { 
-						boxShadow: '0 0 15px rgba(0, 240, 255, 0.8), 0 0 25px rgba(0, 240, 255, 0.5)'
+						boxShadow: '0 0 40px rgba(255, 215, 0, 0.9), 0 0 80px rgba(147, 112, 219, 0.6)'
+					}
+				},
+				'sacred-shimmer': {
+					'0%': { backgroundPosition: '200% 0' },
+					'100%': { backgroundPosition: '-200% 0' }
+				},
+				'ethereal-wave': {
+					'0%, 100%': { 
+						transform: 'translateX(0) scale(1)',
+						opacity: '0.8'
+					},
+					'50%': { 
+						transform: 'translateX(10px) scale(1.05)',
+						opacity: '1'
 					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
+				'divine-glow': 'divine-glow 3s ease-in-out infinite',
+				'heavenly-float': 'heavenly-float 8s ease-in-out infinite',
+				'divine-pulse': 'divine-pulse 4s ease-in-out infinite',
+				'sacred-shimmer': 'sacred-shimmer 3s linear infinite',
+				'ethereal-wave': 'ethereal-wave 6s ease-in-out infinite',
+				// Keep existing animations
 				'glow': 'glow 2s ease-in-out infinite',
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
