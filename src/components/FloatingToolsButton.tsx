@@ -26,7 +26,7 @@ const FloatingToolsButton: React.FC = () => {
     <div className="fixed bottom-24 right-6 z-40 animate-fade-in">
       <Button
         asChild
-        className="rounded-full bg-gradient-to-r from-cyberpunk-blue to-cyberpunk-purple hover:from-cyberpunk-purple hover:to-cyberpunk-blue shadow-glow px-4 py-2 text-white font-medium"
+        className="rounded-full bg-gradient-to-r from-cyberpunk-blue to-cyberpunk-purple hover:from-cyberpunk-purple hover:to-cyberpunk-blue shadow-glow px-4 py-2 text-white font-medium transition-all duration-300 hover:scale-105"
       >
         <a 
           href="https://www.aiwebtools.ai"

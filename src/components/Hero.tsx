@@ -24,12 +24,12 @@ const Hero: React.FC = () => {
               Transform Yourself Into
             </span>
             <span className="text-divine-pearl font-bold block animate-heavenly-float">
-              A Divine Movie Star
+              A Movie Star
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-divine-light mb-12 max-w-3xl mx-auto leading-relaxed animate-ethereal-wave">
-            Ascend to cinematic divinity with Movie Scene Maker GPT. Create breathtaking, personalized movie scenes that illuminate your presence in any genre, setting, or sacred storyline.
+            Create stunning, personalized movie scenes with Movie Scene Maker GPT. Transform yourself into the star of any movie genre, setting, or storyline with professional-quality results.
           </p>
           
           <div className="flex flex-col md:flex-row gap-8 justify-center mb-16">
@@ -40,14 +40,14 @@ const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                ASCEND TO MOVIE STARDOM
+                START CREATING MOVIE SCENES
                 <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={20} />
               </a>
             </Button>
             
             <Button asChild variant="outline" className="glass-button text-lg py-6 px-10">
               <a href="#how-it-works">
-                Witness The Divine Process
+                Learn How It Works
               </a>
             </Button>
           </div>
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
                     width="100%"
                     height="100%"
                     src="https://www.youtube.com/embed/9fpWIE20z7s?autoplay=1&mute=0&rel=0&showinfo=0&modestbranding=1&playsinline=1&controls=1&start=0&origin=https://lovable.dev&enablejsapi=1&iv_load_policy=3&fs=1&cc_load_policy=0&disablekb=0&widget_referrer=https://lovable.dev&vq=hd1080&loop=0&color=white&hl=en&cc_lang_pref=en&fmt=22&html5=1&buffer=3&preload=auto"
-                    title="Divine Movie Scene Maker GPT Demo"
+                    title="Movie Scene Maker GPT Demo"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                     allowFullScreen
                     className="rounded-xl"
@@ -84,12 +84,12 @@ const Hero: React.FC = () => {
             </div>
           </div>
           
-          {/* Divine movie frames preview */}
+          {/* Movie frames preview */}
           <div className="mt-12 relative animate-heavenly-float">
             <a 
               href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
               className="divine-card p-2 inline-block hover:scale-105 transition-all duration-500 cursor-pointer"
-              aria-label="Begin Your Divine Journey"
+              aria-label="Start Creating Movie Scenes"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -98,7 +98,7 @@ const Hero: React.FC = () => {
                   <div key={i} className="relative aspect-video w-full sm:w-48 md:w-72">
                     <div className="absolute inset-0 bg-gradient-to-br from-divine-gold/30 to-divine-sacred/30 rounded-lg backdrop-blur-sm">
                       <div className="w-full h-full flex items-center justify-center text-divine-pearl text-sm font-semibold">
-                        Divine Scene {i}
+                        Movie Scene {i}
                       </div>
                     </div>
                   </div>
@@ -112,7 +112,7 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="divine-text text-lg font-bold">Your Divine Destiny Awaits</span>
+              <span className="divine-text text-lg font-bold">Start Your Movie Journey</span>
             </a>
           </div>
         </div>
