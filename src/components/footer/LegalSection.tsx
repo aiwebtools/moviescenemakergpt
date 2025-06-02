@@ -20,7 +20,7 @@ const LegalSection: React.FC = () => {
           </a>
         </li>
         <li>
-          <a href="https://aiwebtools.ai/terms-of-services" 
+          <a href="https://aiwebtools.lovable.app/disclaimers" 
              className="interactive-link text-gray-400 flex items-center gap-2"
              target="_blank"
              rel="noopener noreferrer">

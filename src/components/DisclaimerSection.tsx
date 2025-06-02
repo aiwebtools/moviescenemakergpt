@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-import { Users, Clock } from "lucide-react";
+import { Users, Clock, Info } from "lucide-react";
 
 const DisclaimerSection: React.FC = () => {
   return (
@@ -12,6 +12,17 @@ const DisclaimerSection: React.FC = () => {
           <p className="text-gray-400 max-w-2xl mx-auto">
             Important information about using our service
           </p>
+        </div>
+        
+        {/* Educational Purpose Disclaimer */}
+        <div className="max-w-4xl mx-auto mb-10">
+          <Alert className="cyberpunk-card border-cyberpunk-purple/30 bg-cyberpunk-purple/10">
+            <Info className="text-cyberpunk-neon-blue h-5 w-5" />
+            <AlertTitle className="text-lg font-bold text-white mb-2">Educational & Research Purpose</AlertTitle>
+            <AlertDescription className="text-gray-300">
+              This service is provided for informational, educational, and research purposes only. All generated content should be used responsibly and in accordance with applicable laws and regulations.
+            </AlertDescription>
+          </Alert>
         </div>
         
         {/* Usage Tiers Alert */}
