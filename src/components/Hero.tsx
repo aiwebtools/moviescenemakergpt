@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -33,7 +32,7 @@ const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col md:flex-row gap-8 justify-center mb-16">
-            <Button asChild className="divine-button group text-lg py-6 px-10">
+            <Button asChild className="bg-gradient-to-r from-divine-gold to-divine-sacred hover:from-divine-sacred hover:to-divine-gold text-divine-deep font-bold text-lg py-6 px-10 rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg">
               <a 
                 href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt" 
                 className="flex items-center gap-3"
@@ -85,7 +84,7 @@ const Hero: React.FC = () => {
           </div>
           
           {/* Movie frames preview */}
-          <div className="mt-12 relative animate-heavenly-float">
+          <div className="mt-12 relative">
             <a 
               href="https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt"
               className="divine-card p-2 inline-block hover:scale-105 transition-all duration-500 cursor-pointer"
