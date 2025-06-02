@@ -79,12 +79,12 @@ const Header: React.FC = () => {
 
             <Button 
               asChild 
-              className="neon-button font-bold tracking-wide"
+              className="bg-gradient-to-r from-divine-gold to-divine-sacred hover:from-divine-sacred hover:to-divine-gold text-divine-deep font-bold text-lg py-4 px-8 rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg"
               size="lg"
             >
               <a 
                 href="https://www.aiwebtools.ai" 
-                className="flex items-center gap-2 transition-all duration-300 hover:scale-105"
+                className="flex items-center gap-2"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -22,7 +23,7 @@ const Hero: React.FC = () => {
             <span className="divine-text block mb-4">
               Transform Yourself Into
             </span>
-            <span className="text-divine-pearl font-bold block animate-heavenly-float">
+            <span className="text-divine-pearl font-bold block">
               A Movie Star
             </span>
           </h1>
@@ -44,7 +45,7 @@ const Hero: React.FC = () => {
               </a>
             </Button>
             
-            <Button asChild variant="outline" className="glass-button text-lg py-6 px-10">
+            <Button asChild variant="outline" className="bg-divine-deep/20 backdrop-blur-xl border border-divine-gold/30 rounded-2xl px-8 py-6 text-lg transition-all duration-300 hover:bg-divine-gold/10 hover:border-divine-gold/50 text-divine-light font-medium hover:scale-105">
               <a href="#how-it-works">
                 Learn How It Works
               </a>
