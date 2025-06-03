@@ -1,0 +1,23 @@
+
+{
+  "name": "AI Web Tools - Free AI Tools Collection",
+  "short_name": "AI Web Tools",
+  "description": "Leading collection of free AI tools including Movie Scene Maker GPT and other web-based artificial intelligence solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["productivity", "entertainment", "utilities"],
+  "lang": "en-US",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}

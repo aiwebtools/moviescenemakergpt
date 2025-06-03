@@ -1,3 +1,11 @@
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Special crawlers
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +18,8 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap location
+Sitemap: https://aiwebtools.ai/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
