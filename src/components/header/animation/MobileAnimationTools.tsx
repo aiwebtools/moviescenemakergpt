@@ -18,11 +18,17 @@ const MobileAnimationTools: React.FC<MobileAnimationToolsProps> = ({ toolCategor
     <a 
       key={tool.name}
       href={tool.href}
-      className="text-white hover:text-cyberpunk-neon-blue py-2 transition-all duration-300 hover:translate-x-1"
+      className={`py-2 transition-all duration-300 hover:translate-x-1 ${
+        tool.isTopRated 
+          ? 'text-yellow-300 hover:text-yellow-200 font-semibold' 
+          : 'text-white hover:text-cyberpunk-neon-blue'
+      }`}
       target="_blank"
       rel="noopener noreferrer"
     >
+      {tool.isTopRated && <span className="mr-1">⭐</span>}
       {tool.name}
+      {tool.isTopRated && <span className="ml-2 text-xs text-yellow-400/80">(Video + Sound)</span>}
     </a>
   ), []);
 
@@ -34,11 +40,17 @@ const MobileAnimationTools: React.FC<MobileAnimationToolsProps> = ({ toolCategor
           value={`${category.title.toLowerCase().replace(/\s+/g, '-')}-mobile`} 
           className="border-none"
         >
-          <AccordionTrigger className="text-white hover:text-cyberpunk-neon-blue py-2 font-medium">
+          <AccordionTrigger className={`py-2 font-medium ${
+            category.isTopRated 
+              ? 'text-yellow-300 hover:text-yellow-200' 
+              : 'text-white hover:text-cyberpunk-neon-blue'
+          }`}>
             {category.title}
           </AccordionTrigger>
           <AccordionContent>
-            <div className="flex flex-col space-y-2 pl-4 will-change-[height,transform]">
+            <div className={`flex flex-col space-y-2 pl-4 will-change-[height,transform] ${
+              category.isTopRated ? 'bg-yellow-500/5 rounded-lg p-2 border border-yellow-500/20' : ''
+            }`}>
               {category.tools.map(renderToolLink)}
             </div>
           </AccordionContent>

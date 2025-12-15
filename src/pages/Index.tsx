@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
+import TopRatedTools from '@/components/TopRatedTools';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import DisclaimerSection from '@/components/DisclaimerSection';
@@ -21,6 +22,9 @@ const Index: React.FC = () => {
         </div>
         <div className="sacred-spacing">
           <HowItWorks />
+        </div>
+        <div className="sacred-spacing">
+          <TopRatedTools />
         </div>
         <div className="sacred-spacing">
           <Testimonials />

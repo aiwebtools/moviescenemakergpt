@@ -26,11 +26,17 @@ const DesktopAnimationTools: React.FC<DesktopAnimationToolsProps> = ({ toolCateg
     <DropdownMenuItem key={tool.name} asChild>
       <a 
         href={tool.href} 
-        className="cursor-pointer py-2 px-4 hover:bg-cyberpunk-dark hover:text-cyberpunk-neon-blue transition-all duration-300 hover:translate-x-1"
+        className={`cursor-pointer py-2 px-4 transition-all duration-300 hover:translate-x-1 ${
+          tool.isTopRated 
+            ? 'text-yellow-300 hover:text-yellow-200 hover:bg-yellow-500/10 font-semibold' 
+            : 'hover:bg-cyberpunk-dark hover:text-cyberpunk-neon-blue'
+        }`}
         target="_blank"
         rel="noopener noreferrer"
       >
+        {tool.isTopRated && <span className="mr-1">⭐</span>}
         {tool.name}
+        {tool.isTopRated && <span className="ml-2 text-xs text-yellow-400/80">(Video + Sound)</span>}
       </a>
     </DropdownMenuItem>
   ), []);
@@ -62,11 +68,17 @@ const DesktopAnimationTools: React.FC<DesktopAnimationToolsProps> = ({ toolCateg
               value={category.title.toLowerCase().replace(/\s+/g, '-')} 
               className="border-none"
             >
-              <AccordionTrigger className="py-2 px-2 hover:text-cyberpunk-neon-blue font-medium">
+              <AccordionTrigger className={`py-2 px-2 font-medium ${
+                category.isTopRated 
+                  ? 'text-yellow-300 hover:text-yellow-200' 
+                  : 'hover:text-cyberpunk-neon-blue'
+              }`}>
                 {category.title}
               </AccordionTrigger>
               <AccordionContent>
-                <div className="flex flex-col space-y-1 will-change-[height,transform]">
+                <div className={`flex flex-col space-y-1 will-change-[height,transform] ${
+                  category.isTopRated ? 'bg-yellow-500/5 rounded-lg p-2 border border-yellow-500/20' : ''
+                }`}>
                   {category.tools.map(renderToolLink)}
                 </div>
               </AccordionContent>
