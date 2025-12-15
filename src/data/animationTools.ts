@@ -2,19 +2,38 @@
 interface AnimationTool {
   name: string;
   href: string;
+  isTopRated?: boolean;
+  description?: string;
 }
 
 interface ToolCategory {
   title: string;
   tools: AnimationTool[];
+  isTopRated?: boolean;
 }
 
 export const animationToolsData: ToolCategory[] = [
   {
+    title: '⭐ Top Rated Video Generation',
+    isTopRated: true,
+    tools: [
+      { 
+        name: 'SORA 2', 
+        href: 'https://www.sora.com', 
+        isTopRated: true,
+        description: 'Video + Sound generation in one'
+      },
+      { 
+        name: 'Google Veo 3', 
+        href: 'https://aistudio.google.com/generate-video', 
+        isTopRated: true,
+        description: 'Video + Sound generation in one'
+      },
+    ]
+  },
+  {
     title: 'Image to Video Generators',
     tools: [
-      { name: 'Google Veo 2', href: 'https://aistudio.google.com/generate-video' },
-      { name: 'SORA', href: 'https://www.sora.com' },
       { name: 'KLING', href: 'https://klingai.com' },
       { name: 'HAILUO', href: 'https://hailuoai.video/' },
       { name: 'HIGGSFIELD', href: 'https://higgsfield.ai/' },
