@@ -9,7 +9,7 @@ const CopyrightBar: React.FC = () => {
     <div className="border-t border-gray-800 pt-6 mt-4">
       <div className="flex flex-col md:flex-row items-center justify-between">
         <p className="text-gray-400 text-sm mb-4 md:mb-0">
-          © {currentYear} <a href="https://www.aiwebtools.ai" className="hover:text-cyberpunk-neon-blue transition-colors font-medium" target="_blank" rel="noopener noreferrer">AI WEB TOOLS LLC</a> All rights reserved.
+          © {currentYear} <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="hover:text-cyberpunk-neon-blue transition-colors font-medium" target="_blank" rel="noopener noreferrer">AI WEB TOOLS LLC</a> All rights reserved.
         </p>
         
         <div className="flex items-center gap-4">
