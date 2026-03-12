@@ -22,7 +22,7 @@ const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
           Movie Scene Maker GPT
         </span>
         <span className="text-xs text-cyberpunk-neon-blue">
-          Presented by <a href="https://www.aiwebtools.ai" className="underline hover:text-cyberpunk-pink transition-colors">AiWebTools.Ai</a>
+          Presented by <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="underline hover:text-cyberpunk-pink transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>
         </span>
       </div>
     </div>

@@ -29,7 +29,7 @@ const FloatingToolsButton: React.FC = () => {
         className="rounded-full bg-gradient-to-r from-cyberpunk-blue to-cyberpunk-purple hover:from-cyberpunk-purple hover:to-cyberpunk-blue shadow-glow px-4 py-2 text-white font-medium transition-all duration-300 hover:scale-105"
       >
         <a 
-          href="https://www.aiwebtools.ai"
+          href="https://aiwebtools.lovable.app/?via=aiwebtools"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2"

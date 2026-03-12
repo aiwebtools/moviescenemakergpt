@@ -58,7 +58,7 @@ const MobileNavigationMenu: React.FC<MobileNavigationMenuProps> = ({
           size="lg"
         >
           <a 
-            href="https://www.aiwebtools.ai"
+            href="https://aiwebtools.lovable.app/?via=aiwebtools"
             onClick={onClose}
             target="_blank"
             rel="noopener noreferrer"

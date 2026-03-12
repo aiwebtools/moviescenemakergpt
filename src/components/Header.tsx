@@ -83,7 +83,7 @@ const Header: React.FC = () => {
               size="lg"
             >
               <a 
-                href="https://www.aiwebtools.ai" 
+                href="https://aiwebtools.lovable.app/?via=aiwebtools" 
                 className="flex items-center gap-2"
                 target="_blank"
                 rel="noopener noreferrer"
