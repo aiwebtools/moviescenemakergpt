@@ -35,7 +35,7 @@ const ContactSection: React.FC = () => {
       {/* AI Tools Button */}
       <div className="mt-6 w-full">
         <a
-          href="https://www.aiwebtools.ai"
+          href="https://aiwebtools.lovable.app/?via=aiwebtools"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-cyberpunk-blue to-cyberpunk-purple text-white hover:from-cyberpunk-purple hover:to-cyberpunk-pink transition-all duration-300 shadow-glow"
           target="_blank"
           rel="noopener noreferrer"
